@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "huit-at-jupyterhub-user-docs"
+version = "1.0"
+description = ""
+authors = ["Jeremy Guillette <3651377+jaguillette@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "huit_at_jupyterhub_user_docs"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.5.2"
+mkdocs-material = "^9.1.21"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

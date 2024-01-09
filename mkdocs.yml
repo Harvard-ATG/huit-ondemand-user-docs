@@ -1,0 +1,19 @@
+site_name: HUIT OnDemand User Documentation
+
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  palette:
+    scheme: harvard
+  logo: assets/harvard_shield.svg
+  favicon: assets/favicon.ico
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
