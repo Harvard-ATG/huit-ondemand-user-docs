@@ -1,7 +1,12 @@
-site_name: HUIT OnDemand User Documentation
+site_name: HUIT Open OnDemand User Documentation
 
 nav:
   - Home: index.md
+  - File Management: file-management.md
+  - Terminal App: terminal.md
+  - VS Code App: vscode-app.md
+  - Shared Software: spack-shared-software.md
+  - Personal Software: spack-local.md
 
 theme:
   name: material
