@@ -1,6 +1,8 @@
 # HUIT Open OnDemand
 
-HUIT OnDemand is a new platform to provide access to high performance compute (HPC) resources for courses. It runs in AWS using parallel cluster, unlike other HPC resources used for research that are housed in physical data centers.
+HUIT Open OnDemand is a new platform to provide access to high performance compute (HPC) resources for courses. It runs in AWS using ParallelCluster, unlike other HPC resources used for research that are housed in physical data centers. If you have access to the platform, you can log in via [ood.huit.harvard.edu/](https://ood.huit.harvard.edu/)
+
+HUIT Open OnDemand is only available for use in courses. If you want to use it in your course, you need to submit a request at [atg.fas.harvard.edu/academic-computing](https://atg.fas.harvard.edu/academic-computing). We need a new request for each semester that you intend to use the platform for, so that we can ensure that the platform is still needed, and that we're providing the software and compute resources required for your course.
 
 ## Interactive Software
 
