@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../file-management/">
+        <link rel="prev" href="../spack-shared-software/">
       
       
-        <link rel="next" href="../vscode-app/">
+        <link rel="next" href="../spack-local/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Terminal App - HUIT Open OnDemand User Documentation</title>
+        <title>Shared Folder - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terminal-app" class="md-skip">
+        <a href="#shared-folder" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Terminal App
+              Shared Folder
             
           </span>
         </div>
@@ -218,21 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../terminal/" class="md-nav__link">
         Terminal App
       </a>
-      
     </li>
   
 
@@ -273,11 +263,66 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../shared-folder/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Shared Folder
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Shared Folder
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-link-to-the-shared-folder" class="md-nav__link">
+    Creating a link to the shared folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixing-permissions" class="md-nav__link">
+    Fixing permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -317,6 +362,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-link-to-the-shared-folder" class="md-nav__link">
+    Creating a link to the shared folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixing-permissions" class="md-nav__link">
+    Fixing permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -330,13 +404,28 @@
                   
 
 
-<h1 id="terminal-app">Terminal App</h1>
-<p>Open OnDemand provides access to a browser-based terminal. This terminal runs on a login node in the compute cluster, rather than a compute node, so the terminal environment should not be used directly for computation.</p>
-<p>Instead, the terminal should be used to queue batch or interactive jobs with slurm commands, or to perform simple, non-intensive tasks in your home directory.</p>
-<p>To access the terminal app, go to the "Clusters" menu item and click on "academic Shell Access". This should open a new tab with a terminal interface into an Amazon Linux 2 environment.</p>
-<p><img alt="Screenshot showing the &quot;Clusters&quot; menu item open and the &quot;academic shell access&quot; option highlighted" src="../images/terminal_1.png" /></p>
-<p>When you connect to the terminal, you should see something similar to the screenshot below. If you are prompted for a password, that indicates that a problem has occurred, so please reach out to support via <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a></p>
-<p><img alt="Screenshot showing an active web-based terminal" src="../images/terminal_2.png" /></p>
+<h1 id="shared-folder">Shared Folder</h1>
+<p>In HUIT OnDemand, course staff have access to a shared folder for use in their course. Using this shared folder requires use of the terminal, whether through the OnDemand dashboard or through the terminal in the VS Code interface.</p>
+<p>The shared folder will be located at <code>/shared/courseSharedFolders/$CANVAS_COURSE_ID</code>, where <code>$CANVAS_COURSE_ID</code> can be found in your course's Canvas url: <code>https://canvas.harvard.edu/courses/CANVAS_COURSE_ID</code>.</p>
+<p>The shared folder should contain two utility scripts; one script configures a link to the folder in the home directory of whoever runs the script, and the other ensures that all content in the folder that the current user can edit has appropriate permisssions.</p>
+<h2 id="creating-a-link-to-the-shared-folder">Creating a link to the shared folder</h2>
+<p>You can create a link to the shared folder in your home folder with the included script, like so:</p>
+<div class="highlight"><pre><span></span><code>/shared/courseSharedFolders/<span class="nv">$CANVAS_COURSE_ID</span>/map-this.sh
+</code></pre></div>
+<p>That script creates a symbolic link in your home directory to the shared folder called <code>share</code>, making it accessible in interactive apps like the VS Code app, and making it easier to access than referencing its absolute location.</p>
+<p>If you prefer, you can make your own link by modifying this line:</p>
+<div class="highlight"><pre><span></span><code>ln<span class="w"> </span>-s<span class="w"> </span>/shared/courseSharedFolders/<span class="nv">$COURSE_ID</span><span class="w"> </span>~/share
+</code></pre></div>
+<h2 id="fixing-permissions">Fixing permissions</h2>
+<p>The shared folder works on unix file system permissions, and there are a number of ways for file permissions to get into a state where students can't read files, or course staff can't edit them. If students or teaching staff get error messages about permissions when trying to use files in the shared folder, the <code>fix-permissions.sh</code> script is there to help set things right.</p>
+<p>The script at <code>/shared/courseSharedFolders/$COURSE_ID/fix-permissions.sh</code> will do two things to any file or folder that you have write access to in the shared folder:</p>
+<ol>
+<li>Change the group ownership of the file or folder to the staff group for your course</li>
+<li>Add group write permissions to the file or folder</li>
+</ol>
+<p>If there are files that you did not create in the shared folder, you won't be able to modify their permissions, but running the script will still modify the permissions of files that you created. It will report errors modifying the files you do not own, but that doesn't mean it failed, just that there are files that you couldn't change.</p>
+<h2 id="support">Support</h2>
+<p>If you have issues with your shared folder, please reach out to <a href="mailto:ithelp@harvard.edu?subject=HUIT OnDemand shared folder issue">ithelp@harvard.edu</a>. Please be sure to include the name of this platform, "HUIT Open OnDemand", to help your request get routed appropriately.</p>
 
 
 
