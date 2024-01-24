@@ -24,6 +24,8 @@ ln -s /shared/courseSharedFolders/$COURSE_ID ~/share
 
 ## Fixing permissions
 
+The shared folder works on unix file system permissions, and there are a number of ways for file permissions to get into a state where students can't read files, or course staff can't edit them. If students or teaching staff get error messages about permissions when trying to use files in the shared folder, the `fix-permissions.sh` script is there to help set things right.
+
 The script at `/shared/courseSharedFolders/$COURSE_ID/fix-permissions.sh` will do two things to any file or folder that you have write access to in the shared folder:
 
 1. Change the group ownership of the file or folder to the staff group for your course
