@@ -244,9 +244,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          VS Code App
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         VS Code App
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-commands-from-vs-code-interface" class="md-nav__link">
+    Slurm commands from VS Code interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -317,6 +348,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-commands-from-vs-code-interface" class="md-nav__link">
+    Slurm commands from VS Code interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -342,6 +388,8 @@
 <p><img alt="Screenshot of Open OnDemand interface" src="../images/vscode_4.png" /></p>
 <p>Once you click the button to connect, you should be directed to a VS Code interface like this one. You shouldn't be prompted for a password, and if you are, that indicates an issue with how the VS Code app is working, so please reach out to support via <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a></p>
 <p><img alt="Screenshot of Open OnDemand interface" src="../images/vscode_5.png" /></p>
+<h2 id="slurm-commands-from-vs-code-interface">Slurm commands from VS Code interface</h2>
+<p>When in the terminal in VS Code, you have access to the same slurm commands that are available in the terminal that runs on the login node, accessible from the OnDemand dashboard. However, the commands may behave differently, since the VS Code interface is running as part of an existing slurm job. For instance, you cannot allocate additional CPUs via regular <code>srun</code> commands, beyond what the VS Code interface is already running. However, <code>sbatch</code> commands can dispatch jobs with additional resources from this context. If you find other problematic slurm behavior from the VS Code interface, especially if you have found a workaround, let us know by opening an issue in the repository for this documentation: <a href="https://github.com/Harvard-ATG/huit-ondemand-user-docs/issues">github.com/Harvard-ATG/huit-ondemand-user-docs/issues</a></p>
 
 
 
