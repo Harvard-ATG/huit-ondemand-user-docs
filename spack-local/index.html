@@ -319,6 +319,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-an-upstream" class="md-nav__link">
+    Setting an upstream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-modules" class="md-nav__link">
     Adding modules
   </a>
@@ -367,6 +374,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-an-upstream" class="md-nav__link">
+    Setting an upstream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-modules" class="md-nav__link">
     Adding modules
   </a>
@@ -397,6 +411,10 @@
 <p>You can change <code>~/spack</code> if you want to install to another location.</p>
 <p>Once you have Spack cloned, you can find the activation script in <code>&lt;install location&gt;/share/spack/setup-env.sh</code> That means if you installed spack via the command above, you can activate it with</p>
 <div class="highlight"><pre><span></span><code>.<span class="w"> </span>~/spack/share/spack/setup-env.sh
+</code></pre></div>
+<h2 id="setting-an-upstream">Setting an upstream</h2>
+<p>You can build all of your own dependencies in your home folder, but it can be more expedient to use the pre-build software in the shared spack installation as a starting point. To enable this, you need to set the shared installation directory as an <a href="https://spack.readthedocs.io/en/latest/chain.html">upstream</a>. The easiest way to do this is to run this command with your local spack environment activated:</p>
+<div class="highlight"><pre><span></span><code>spack<span class="w"> </span>config<span class="w"> </span>add<span class="w"> </span>upstreams:spack-instance-1:install_tree:/shared/software/spack/opt/spack
 </code></pre></div>
 <h2 id="adding-modules">Adding modules</h2>
 <p>With a spack installation in your home directory, you can manage your own module installations. You can look for modules with <code>spack list &lt;modulename&gt;</code>, see your installed modules with <code>spack find</code>, and add new modules with <code>spack install &lt;modulename&gt;</code></p>
