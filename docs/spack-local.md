@@ -18,6 +18,14 @@ Once you have Spack cloned, you can find the activation script in `<install loca
 . ~/spack/share/spack/setup-env.sh
 ```
 
+## Setting an upstream
+
+You can build all of your own dependencies in your home folder, but it can be more expedient to use the pre-build software in the shared spack installation as a starting point. To enable this, you need to set the shared installation directory as an [upstream](https://spack.readthedocs.io/en/latest/chain.html). The easiest way to do this is to run this command with your local spack environment activated:
+
+```bash
+spack config add upstreams:spack-instance-1:install_tree:/shared/software/spack/opt/spack
+```
+
 ## Adding modules
 
 With a spack installation in your home directory, you can manage your own module installations. You can look for modules with `spack list <modulename>`, see your installed modules with `spack find`, and add new modules with `spack install <modulename>`
