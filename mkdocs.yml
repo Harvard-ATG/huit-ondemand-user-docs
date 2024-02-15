@@ -8,6 +8,7 @@ nav:
   - Shared Software: spack-shared-software.md
   - Shared Folder: shared-folder.md
   - Personal Software: spack-local.md
+  - Troubleshooting: troubleshooting.md
 
 theme:
   name: material
