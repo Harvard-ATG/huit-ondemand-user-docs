@@ -7,7 +7,7 @@ Our configuration of OnDemand uses a centrally configured repository of command-
 In order to avoid interfering with any other configurations that you may want to set up, Spack is not configured in your terminal by default. Rather, it must be activated with the following command (note the dot at the start, and be sure to include that with the rest):
 
 ```bash
-. /shared/software/spack/share/spack/setup-env.sh
+. /shared/spack/share/spack/setup-env.sh
 ```
 
 This will make the `spack` command available in your terminal session. If you want to use the shared `spack` command in every session, you can add this line to your `~/.bashrc` file.
@@ -39,7 +39,7 @@ $ which likwid-perfctr
 /usr/bin/which: no likwid-perfctr in (/opt/amazon/openmpi/bin:...)
 $ spack load likwid
 $ which likwid-perfctr
-/shared/software/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
+/shared/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
 ```
 
 ## Use in scripts
