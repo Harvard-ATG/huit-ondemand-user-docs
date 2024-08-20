@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../vscode-app/">
-      
-      
-        <link rel="next" href="../shared-folder/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Shared Software - HUIT Open OnDemand User Documentation</title>
+        <title>Using Spack for Package Management - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#shared-software-with-spack" class="md-skip">
+        <a href="#using-spack-for-package-management" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Shared Software
+              Using Spack for Package Management
             
           </span>
         </div>
@@ -276,30 +272,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Shared Software
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../spack-shared-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -308,53 +284,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#make-the-spack-command-available" class="md-nav__link">
-    <span class="md-ellipsis">
-      Make the spack command available
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-modules-with-spack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load modules with spack
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-in-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use in scripts
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -446,29 +375,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-the-spack-command-available" class="md-nav__link">
+  <a href="#spack-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      Make the spack command available
+      Spack Environments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spack Environments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-important-to-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's important to know?
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#load-modules-with-spack" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load modules with spack
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-in-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use in scripts
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -487,37 +413,33 @@
                   
 
 
-<h1 id="shared-software-with-spack">Shared Software with Spack</h1>
-<p>Our configuration of OnDemand uses a centrally configured repository of command-line software managed by and available through <a href="https://spack.readthedocs.io/en/latest/index.html">Spack</a>. We provide some pre-installed packages, but if you find that you need some software that is available through Spack, it can be installed to that shared location on request.</p>
-<h2 id="make-the-spack-command-available">Make the <code>spack</code> command available</h2>
-<p>In order to avoid interfering with any other configurations that you may want to set up, Spack is not configured in your terminal by default. Rather, it must be activated with the following command (note the dot at the start, and be sure to include that with the rest):</p>
-<div class="highlight"><pre><span></span><code>.<span class="w"> </span>/shared/spack/share/spack/setup-env.sh
-</code></pre></div>
-<p>This will make the <code>spack</code> command available in your terminal session. If you want to use the shared <code>spack</code> command in every session, you can add this line to your <code>~/.bashrc</code> file.</p>
-<p>The Code Server app runs using a Spack module, so the shared <code>spack</code> command is available by default in the terminal inside the VS Code interface.</p>
-<h2 id="load-modules-with-spack">Load modules with <code>spack</code></h2>
-<p>With the <code>spack</code> command enabled, you can now load modules that have been installed to the shared location. You can list all of the modules available with <code>spack find</code>:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>spack<span class="w"> </span>find
---<span class="w"> </span>linux-amzn2-skylake_avx512<span class="w"> </span>/<span class="w"> </span>gcc@7.3.1<span class="w"> </span>-----------------------
-berkeley-db@18.1.40<span class="w">                 </span>curl@8.4.0<span class="w">      </span>htslib@1.17<span class="w">         </span>libdivsufsort@2.0.1<span class="w">  </span>libtool@2.4.7<span class="w">     </span>nghttp2@1.57.0<span class="w">       </span>r@4.3.0<span class="w">               </span>unzip@6.0
-boost@1.83.0<span class="w">                        </span>curl@8.4.0<span class="w">      </span>hwloc@2.9.1<span class="w">         </span>libffi@3.4.4<span class="w">         </span>libunistring@1.1<span class="w">  </span>openjdk@11.0.20.1_1<span class="w">  </span>readline@8.2<span class="w">          </span>util-linux-uuid@2.38.1
-bowtie@1.3.1<span class="w">                        </span>diffutils@3.9<span class="w">   </span>icu4c@67.1<span class="w">          </span>libgff@2.0.0<span class="w">         </span>libxcrypt@4.4.35<span class="w">  </span>openssl@3.1.3<span class="w">        </span>salmon@1.10.2<span class="w">         </span>util-macros@1.19.3
-bzip2@1.0.8<span class="w">                         </span>expat@2.5.0<span class="w">     </span>intel-pin@3.27<span class="w">      </span>libiconv@1.17<span class="w">        </span>libxml2@2.10.3<span class="w">    </span>pcre2@10.42<span class="w">          </span>sqlite@3.43.2<span class="w">         </span>which@2.21
-ca-certificates-mozilla@2023-05-30<span class="w">  </span>gdbm@1.23<span class="w">       </span>intel-tbb@2021.9.0<span class="w">  </span>libidn2@2.3.4<span class="w">        </span>likwid@5.2.2<span class="w">      </span>perl@5.38.0<span class="w">          </span>staden-io-lib@1.14.8<span class="w">  </span>xz@5.4.1
-cereal@1.3.2<span class="w">                        </span>gettext@0.22.3<span class="w">  </span>jemalloc@5.3.0<span class="w">      </span>libmd@1.0.4<span class="w">          </span>lua@5.4.4<span class="w">         </span>pigz@2.7<span class="w">             </span>star@2.7.10b<span class="w">          </span>zlib-ng@2.1.4
-cmake@3.27.7<span class="w">                        </span>gmake@4.4.1<span class="w">     </span>libbsd@0.11.7<span class="w">       </span>libpciaccess@0.17<span class="w">    </span>m4@1.4.19<span class="w">         </span>pkgconf@1.9.5<span class="w">        </span>tar@1.34<span class="w">              </span>zstd@1.5.5
-code-server@4.12.0<span class="w">                  </span>gzip@1.12<span class="w">       </span>libdeflate@1.18<span class="w">     </span>libsigsegv@2.14<span class="w">      </span>ncurses@6.4<span class="w">       </span>python@3.11.6<span class="w">        </span>texinfo@7.0.3
-<span class="o">==</span>&gt;<span class="w"> </span><span class="m">63</span><span class="w"> </span>installed<span class="w"> </span>packages
-</code></pre></div>
-<p>You can load modules with <code>spack load</code> followed by the name of the module. Once you have the module loaded, you'll be able to use the commands that it enables. As an example:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
-/usr/bin/which:<span class="w"> </span>no<span class="w"> </span>likwid-perfctr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>/opt/amazon/openmpi/bin:...<span class="o">)</span>
-$<span class="w"> </span>spack<span class="w"> </span>load<span class="w"> </span>likwid
-$<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
-/shared/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
-</code></pre></div>
-<h2 id="use-in-scripts">Use in scripts</h2>
-<p>If you are preparing a batch job, be sure to include a line to make the <code>spack</code> command available, and to load the modules that your job needs.</p>
+<h1 id="using-spack-for-package-management">Using Spack for Package Management</h1>
+<p>Spack is software that is pre-configured in HUIT Open OnDemand to enable the easy installation and management of high performance compute applications. There is a wide variety of software available, and for <a href="https://packages.spack.io/">packages with existing spack configurations</a>, the installation is usually just one line of code.</p>
+<p>However, since installations can take a while, and since you likely want a consistent environment, there are some best practices for managing a spack installation. You can manage any spack installation that you have access to, whether it's an installation in a course shared folder for a course that you're on the teaching staff for, or a <a href="../spack-local/">personal home directory spack installation</a>.</p>
+<h2 id="spack-environments">Spack Environments</h2>
+<p>The Spack documentation provides a <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html">tutorial on environments</a>, which is useful for a more comprehensive understanding of how these environments function. In this documentation, we'll take a more focused approach, dealing with common setup and installation tasks for preparing an environment for a course.</p>
+<h3 id="whats-important-to-know">What's important to know?</h3>
+<ul>
+<li>There is an upstream with some things pre-installed.<ul>
+<li>This should be pre-configured in the shared course folder context, but will require configuration in a home folder.</li>
+</ul>
+</li>
+<li>Adding packages is not installing them<ul>
+<li>You have to do the separate install step after creating an environment.</li>
+<li>The install step is best done async via a slurm job</li>
+</ul>
+</li>
+<li>Environments are stable within the installation that they were created in<ul>
+<li>Users using the same environment have the same software</li>
+<li>Software in the environment won't change unless the environment is explicitly changed</li>
+</ul>
+</li>
+<li>There's a config file you can save<ul>
+<li>It's buried in the spack installation folder</li>
+<li>You should keep it around so you can re-create the same thing later, or we can build it globally</li>
+</ul>
+</li>
+</ul>
 
 
 
