@@ -4,7 +4,11 @@ nav:
   - Home: index.md
   - File Management: file-management.md
   - Terminal App: terminal.md
-  - VS Code App: vscode-app.md
+  - Interactive Apps:
+    - Overview: interactive-apps.md
+    - JupyterLab (Spack): jupyterlab-spack.md
+    - Remote Desktop: remote-desktop-ros.md
+    - Code Server: vscode-app.md
   - Shared Software: spack-shared-software.md
   - Shared Folder: shared-folder.md
   - Personal Software: spack-local.md
