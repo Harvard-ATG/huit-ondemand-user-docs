@@ -47,3 +47,6 @@ job ID is 25 (visible in parentheses next to the app name), so in the terminal
 you would use `scancel 25` to cancel that session and free up those resources.
 Canceling unused sessions keeps the cluster's resources available for new
 sessions, for both you and your classmates.
+
+Logging out of a remote desktop session will also end the session, so it's the
+nice thing to do when you stop working.
