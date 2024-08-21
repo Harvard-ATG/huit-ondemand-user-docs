@@ -38,3 +38,6 @@ other interactive apps.
 Anyone on the teaching staff should have permission to modify the spack
 installation, including by installing new packages and creating new
 environments.
+
+For more on managing a Spack installation and Spack environments, see our [Spack
+package management docs](package-management.md).

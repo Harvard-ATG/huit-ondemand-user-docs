@@ -1,6 +1,6 @@
 # Using Spack From Your Home Directory
 
-If you want to use different modules than the shared modules, or if you want to test out a module before requesting that it be installed in the shared context, you can also install a different `spack` to your home directory.
+If you want to use different packages than the shared packages, or if you want to test out a package before requesting that it be installed in the shared context, you can also install a different `spack` to your home directory.
 
 ## Installing
 
@@ -26,8 +26,11 @@ You can build all of your own dependencies in your home folder, but it can be mo
 spack config add upstreams:spack-instance-1:install_tree:/shared/spack/opt/spack
 ```
 
-## Adding modules
+## Adding packages
 
-With a spack installation in your home directory, you can manage your own module installations. You can look for modules with `spack list <modulename>`, see your installed modules with `spack find`, and add new modules with `spack install <modulename>`
+With a spack installation in your home directory, you can manage your own package installations. You can look for packages with `spack list <packagename>`, see your installed packages with `spack find`, and add new packages with `spack install <packagename>`
 
-When using `spack` installed to your home directory, make sure that any scripts that reference local modules activate your spack environment, not the shared environment.
+When using `spack` installed to your home directory, make sure that any scripts that reference local packages activate your spack environment, not the shared environment.
+
+For more on managing a Spack installation and Spack environments, see our [Spack
+package management docs](package-management.md).
