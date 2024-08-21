@@ -18,8 +18,8 @@ providing the software and compute resources required for your course.
 In OnDemand, users have access to a file management app to access files in their
 OnDemand home directory through a browser. They also have access to a terminal
 app that provides browser access to a terminal in the cluster. In addition,
-we've added a Visual Studio Code app to provide a browser-based IDE that
-provides another point of entry to the cluster.
+we've set up additional interactive apps for different use cases, outlined on
+our [interactive apps page](interactive-apps.md)
 
 ## Shared Command Line Software
 
