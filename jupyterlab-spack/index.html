@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../interactive-apps/">
       
       
-        <link rel="next" href="../shared-folder/">
+        <link rel="next" href="../remote-desktop-ros/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>File Management - HUIT Open OnDemand User Documentation</title>
+        <title>JupyterLab (Spack) - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-management" class="md-skip">
+        <a href="#jupyterlab-spack" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Management
+              JupyterLab (Spack)
             
           </span>
         </div>
@@ -216,19 +216,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,7 +228,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -286,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -310,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Interactive Apps
@@ -342,10 +334,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../jupyterlab-spack/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    JupyterLab (Spack)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -354,6 +366,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-spack-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Spack Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-spack-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Spack Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -574,6 +624,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-spack-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Spack Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-spack-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Spack Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -587,12 +663,40 @@
                   
 
 
-<h1 id="file-management">File Management</h1>
-<p>In Open OnDemand, you can access files in your home directory through a browser, rather than a terminal or through an application within Open OnDemand. This allows you to quickly upload or download files, and to make simple edits to text files in your home directory.</p>
-<p>To get to your files through the browser, use the Files dropdown menu in the bar at the top and click on "Home Directory".</p>
-<p><img alt="Screenshot showing the Files dropdown open with the Home Directory option selected" src="../images/files_1.png" /></p>
-<p>In the home directory tool, you can upload, download, or manipulate your files.</p>
-<p><img alt="Screenshot showing the Home Directory tool interface" src="../images/files_2.png" /></p>
+<h1 id="jupyterlab-spack">JupyterLab (spack)</h1>
+<p>The JupyterLab app that runs via spack has some options in addition to the basic
+CPU and time allocations. These allow you to launch a session with an
+alternative configuration that you define. </p>
+<p>If you just want to use the default packages included in the app, including
+<code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, and <code>scipy</code>, then you don't need to worry about
+these settings. If you want to define your own environment with spack, or you
+have been instructed that an alternative environment has been prepared for your
+class, read on.</p>
+<h2 id="alternative-spack-installation">Alternative Spack Installation</h2>
+<p>The package manager that we use in HUIT Open OnDemand,
+<a href="https://spack.io/">Spack</a>, has a self-contained installation in the file
+system. That means that within your own home directory, or within a course
+shared folder, you can set up a different Spack installation with packages and
+environments that you define, and which can draw on the software already
+installed globally. The JupyterLab (spack) setup allows you to specify an
+alternative Spack path to use, so that the same app configuration can be used
+with these other installations.</p>
+<p>When setting this option, you must already have an alternative Spack
+installation set up, and the installation must include a named environment that
+includes the <code>py-jupyterlab</code> package. You can refer to this installation by its
+absolute path, beginning with <code>/shared</code></p>
+<h2 id="alternative-spack-environment">Alternative Spack Environment</h2>
+<p>The JupyterLab (spack) application also allows you to specify an alternate Spack
+environment. <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html">Spack
+environments</a>
+define a consistent set of packages in a more durable way than a series of
+<code>spack load</code> commands. You may be instructed to change this environment if one
+has been set up for your course as part of the global Spack installation. If
+you've set up your own Spack installation, you must also define an environment
+within that installation that includes the <code>py-jupyterlab</code> package, as well as
+any other packages containing Python modules that you want to have available.
+For more on managing packages with Spack, see the <a href="../package-management/">package management
+page</a></p>
 
 
 

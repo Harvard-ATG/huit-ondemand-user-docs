@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../jupyterlab-spack/">
       
       
-        <link rel="next" href="../shared-folder/">
+        <link rel="next" href="../vscode-app/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>File Management - HUIT Open OnDemand User Documentation</title>
+        <title>Remote Desktop - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-management" class="md-skip">
+        <a href="#remote-desktop-ros-gazebo-matlab" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Management
+              Remote Desktop
             
           </span>
         </div>
@@ -216,19 +216,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,7 +228,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -286,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -310,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Interactive Apps
@@ -363,10 +355,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../remote-desktop-ros/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Remote Desktop
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -375,6 +387,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-remote-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the remote desktop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black-screen-on-idle-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black screen on idle sessions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -574,6 +624,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-remote-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the remote desktop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black-screen-on-idle-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black screen on idle sessions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -587,12 +663,47 @@
                   
 
 
-<h1 id="file-management">File Management</h1>
-<p>In Open OnDemand, you can access files in your home directory through a browser, rather than a terminal or through an application within Open OnDemand. This allows you to quickly upload or download files, and to make simple edits to text files in your home directory.</p>
-<p>To get to your files through the browser, use the Files dropdown menu in the bar at the top and click on "Home Directory".</p>
-<p><img alt="Screenshot showing the Files dropdown open with the Home Directory option selected" src="../images/files_1.png" /></p>
-<p>In the home directory tool, you can upload, download, or manipulate your files.</p>
-<p><img alt="Screenshot showing the Home Directory tool interface" src="../images/files_2.png" /></p>
+<h1 id="remote-desktop-ros-gazebo-matlab">Remote Desktop (ROS / Gazebo / Matlab)</h1>
+<p>This remote desktop application is configured with Matlab, as well as the
+robotics software ROS and Gazebo. It also comes with a code editor, VS Codium,
+and a standard Firefox web browser.</p>
+<p>The application launches with the standard settings for CPUs and the number of
+hours in the reservation. When the application is available, there are some
+additional options for your connection to the application. You can adjust the
+image quality and the compression level. These settings are visible in the
+screenshot below.</p>
+<p><img alt="Screenshot of Open OnDemand interface showing compression and image quality settings, as well as the button to launch the remote desktop" src="../images/remote_desktop_1.png" /></p>
+<p>Compression adjusts the amount of image compression that your remote desktop
+connection is put through. Compression requires resources on the CPU hosting the
+remote desktop, but reduces the amount of bandwidth that the connection uses. If
+you're experiencing lagginess in your connection to the remote desktop, you can
+try increasing the compression, but you may need to allocate more CPUs than your
+work would otherwise require.</p>
+<p>Image quality is related to compression, but changes how the desktop appears.
+Low quality values will result in more compression artifacts in the image from
+the remote desktop, but can further reduce bandwidth. Keep this as high as you
+can if your connection is stable, or as low as you can tolerate if your internet
+connection is poor.</p>
+<h2 id="using-the-remote-desktop">Using the remote desktop</h2>
+<p>You should be able to launch all of the applications that you need from their
+desktop icons. There is also a terminal that runs in the remote desktop if
+needed. Note that the remote desktop is running inside of a container, so it
+does not have access to applications available in the cluster itself, like Slurm
+commands or Spack packages.</p>
+<h2 id="black-screen-on-idle-sessions">Black screen on idle sessions</h2>
+<p>There is a known issue with remote desktop sessions where if left idle for too
+long, they can fail to reconnect. If this happens, it's best to start a new
+session, then cancel the old one. If you've found a better solution for avoiding
+or re-connecting to sessions, please let us know at
+<a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a>.</p>
+<p>To cancel the old session, start a <a href="../terminal/">terminal session</a> and use the
+<code>scancel</code> command to cancel the job. In the example in the screenshot above, the
+job ID is 25 (visible in parentheses next to the app name), so in the terminal
+you would use <code>scancel 25</code> to cancel that session and free up those resources.
+Canceling unused sessions keeps the cluster's resources available for new
+sessions, for both you and your classmates.</p>
+<p>Logging out of a remote desktop session will also end the session, so it's the
+nice thing to do when you stop working.</p>
 
 
 

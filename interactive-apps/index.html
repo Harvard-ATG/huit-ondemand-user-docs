@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../terminal/">
       
       
-        <link rel="next" href="../shared-folder/">
+        <link rel="next" href="../jupyterlab-spack/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>File Management - HUIT Open OnDemand User Documentation</title>
+        <title>Overview - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-management" class="md-skip">
+        <a href="#interactive-apps" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Management
+              Overview
             
           </span>
         </div>
@@ -216,19 +216,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,7 +228,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -286,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -310,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Interactive Apps
@@ -321,10 +313,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../interactive-apps/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -333,6 +334,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -587,12 +589,32 @@
                   
 
 
-<h1 id="file-management">File Management</h1>
-<p>In Open OnDemand, you can access files in your home directory through a browser, rather than a terminal or through an application within Open OnDemand. This allows you to quickly upload or download files, and to make simple edits to text files in your home directory.</p>
-<p>To get to your files through the browser, use the Files dropdown menu in the bar at the top and click on "Home Directory".</p>
-<p><img alt="Screenshot showing the Files dropdown open with the Home Directory option selected" src="../images/files_1.png" /></p>
-<p>In the home directory tool, you can upload, download, or manipulate your files.</p>
-<p><img alt="Screenshot showing the Home Directory tool interface" src="../images/files_2.png" /></p>
+<h1 id="interactive-apps">Interactive Apps</h1>
+<p>There are a number of interactive apps available in HUIT Open OnDemand. Which
+one you use will be determined by which class you are in. These apps have some
+common configuration elements that you'll see when launching any application.</p>
+<p><img alt="Screenshot of Open OnDemand interface" src="../images/vscode_2.png" /></p>
+<p>In this screenshot, the configuration for the launch of the Code Server app,
+you'll see that you can specify a duration for which you want to have the app
+available, as well as the number of CPUs you want to allocate to the job.</p>
+<p>When selecting the duration for your session, choose a length of time a bit
+longer than the amount of time that you intend to work. The time cannot be
+extended, but you can release the resources that your session uses by exiting
+the interactive app from within its interface (the way you do this differs from
+app to app) or canceling the slurm job running it.</p>
+<p>When selecting the number of CPUs allocated to your job, allocate what works
+well for the application you're using. The benefits of allocating more resources
+to your session are pretty self-explanatory, but if you allocate a smaller
+number of CPUs, you have a better chance for your job to run on an existing
+compute node with available capacity, rather than having to wait several minutes
+while a new node comes online.</p>
+<p>In addition to these general settings, we also have application-specific
+documentation for the following apps:</p>
+<ul>
+<li><a href="../jupyterlab-spack/">JupyterLab (Spack)</a></li>
+<li><a href="../remote-desktop-ros/">Remote Desktop (ROS / Gazebo / Matlab)</a></li>
+<li><a href="../vscode-app/">Code Server</a></li>
+</ul>
 
 
 

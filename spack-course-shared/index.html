@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../spack-shared-software/">
       
       
-        <link rel="next" href="../shared-folder/">
+        <link rel="next" href="../spack-local/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>File Management - HUIT Open OnDemand User Documentation</title>
+        <title>Course level - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-management" class="md-skip">
+        <a href="#spack-in-shared-course-folder" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File Management
+              Course level
             
           </span>
         </div>
@@ -216,19 +216,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../file-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,7 +228,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -412,17 +402,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -436,7 +428,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Software (Spack)
@@ -468,10 +460,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../spack-course-shared/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -480,6 +481,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -587,12 +589,38 @@
                   
 
 
-<h1 id="file-management">File Management</h1>
-<p>In Open OnDemand, you can access files in your home directory through a browser, rather than a terminal or through an application within Open OnDemand. This allows you to quickly upload or download files, and to make simple edits to text files in your home directory.</p>
-<p>To get to your files through the browser, use the Files dropdown menu in the bar at the top and click on "Home Directory".</p>
-<p><img alt="Screenshot showing the Files dropdown open with the Home Directory option selected" src="../images/files_1.png" /></p>
-<p>In the home directory tool, you can upload, download, or manipulate your files.</p>
-<p><img alt="Screenshot showing the Home Directory tool interface" src="../images/files_2.png" /></p>
+<h1 id="spack-in-shared-course-folder">Spack in shared course folder</h1>
+<p>HUIT Open OnDemand comes with Spack already installed, and we try to make sure
+that all of the software that instructors request is available from that global
+Spack installation. However, there may be cases where teaching staff want
+flexibility during the semester to install Spack packages on their own, while
+still sharing those installations with students. For this, it's possible to set
+up a Spack installation in the course shared folder provisioned by default for
+each course.</p>
+<p>Each shared course folder comes with a script, <code>setup_spack.sh</code>, which sets up a
+new Spack installation in the shared course folder and connects it to the global
+installation as an upstream source. This new Spack installation can be managed
+by course staff, without having to reinstall packages that are already installed
+globally.</p>
+<p>The way to activate the global installation is by sourcing a script from that
+global installation, like so:</p>
+<div class="highlight"><pre><span></span><code>.<span class="w"> </span>/shared/spack/share/spack/setup-env.sh
+</code></pre></div>
+<p>For a spack installation in a shared course folder, anyone with access can
+activate it by following the link in their home directory. For a class with
+course ID 000000, that would look like this:</p>
+<div class="highlight"><pre><span></span><code>.<span class="w"> </span>~/000000/spack/share/spack/setup-env.sh
+</code></pre></div>
+<p>You should test the command to make sure it works first, but you can add a line
+like that one to your <code>~/.bashrc</code> file so that the Spack installation in your
+shared course folder is activated whenever you log in. Just be sure that it
+works, because problems with your <code>~/.bashrc</code> file can also cause problems with
+other interactive apps.</p>
+<p>Anyone on the teaching staff should have permission to modify the spack
+installation, including by installing new packages and creating new
+environments.</p>
+<p>For more on managing a Spack installation and Spack environments, see our <a href="../package-management/">Spack
+package management docs</a>.</p>
 
 
 
