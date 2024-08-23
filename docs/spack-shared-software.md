@@ -12,11 +12,11 @@ In order to avoid interfering with any other configurations that you may want to
 
 This will make the `spack` command available in your terminal session. If you want to use the shared `spack` command in every session, you can add this line to your `~/.bashrc` file.
 
-The Code Server app runs using a Spack module, so the shared `spack` command is available by default in the terminal inside the VS Code interface.
+The Code Server app runs using a Spack package, so the shared `spack` command is available by default in the terminal inside the VS Code interface.
 
-## Load modules with `spack`
+## Load packages with `spack`
 
-With the `spack` command enabled, you can now load modules that have been installed to the shared location. You can list all of the modules available with `spack find`:
+With the `spack` command enabled, you can now load packages that have been installed to the shared location. You can list all of the packages available with `spack find`:
 
 ```bash
 $ spack find
@@ -32,7 +32,7 @@ code-server@4.12.0                  gzip@1.12       libdeflate@1.18     libsigse
 ==> 63 installed packages
 ```
 
-You can load modules with `spack load` followed by the name of the module. Once you have the module loaded, you'll be able to use the commands that it enables. As an example:
+You can load packages with `spack load` followed by the name of the package. Once you have the package loaded, you'll be able to use the commands that it enables. As an example:
 
 ```bash
 $ which likwid-perfctr
@@ -44,4 +44,4 @@ $ which likwid-perfctr
 
 ## Use in scripts
 
-If you are preparing a batch job, be sure to include a line to make the `spack` command available, and to load the modules that your job needs.
+If you are preparing a batch job, be sure to include a line to make the `spack` command available, and to load the packages that your job needs.

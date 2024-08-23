@@ -4,9 +4,7 @@ This repository contains the source files for the HUIT OnDemand user documentati
 
 ## Development environment
 
-The dependencies are defined by [poetry](https://python-poetry.org/), and it's easiest to spin up a new environment using that. If you prefer another virtual environment tool, reference the `pyproject.toml` file for required modules.
-
-With the dependencies set up and your environment activated, running `mkdocs serve` will provide you with a live test version of the site for reference.
+This repo uses `mkdocs`, and the version last used is pinned to `requirements.txt`. Any environment with a compatible version of `mkdocs` should work fine for a local development environment.
 
 ## Deployment
 
