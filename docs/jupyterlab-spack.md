@@ -1,5 +1,24 @@
 # JupyterLab (spack)
 
+This is an implementation of JupyterLab that runs directly on compute nodes using a package manager
+called [Spack](https://spack.io/).
+
+## Differences from Spack implementation
+
+For general purpose data science use cases, the Apptainer implementation and the
+[Spack implementation](jupyterlab-spack.md) of JupyterLab are the same. The
+Apptainer implementation seems to load slightly faster, and the Spack
+implementation provides access to Slurm commands directly from the JupyterLab
+app.
+
+However, for various course-specific use cases, one or the other implementation
+will be in use as the primary means of accessing a custom environment. If you
+aren't sure which one to use, ask your instructor; they should receive
+information about which implementation to use when they are notified that their
+software is ready for use.
+
+## Additional Settings
+
 The JupyterLab app that runs via spack has some options in addition to the basic
 CPU and time allocations. These allow you to launch a session with an
 alternative configuration that you define. 
