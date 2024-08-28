@@ -22,7 +22,7 @@ stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
 created by Project Jupyter. Specifically, we have the
 [scipy-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook)
 and
-[datascience-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook)
+[datascience-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)
 containers configured for use.
 
 The `scipy-notebook` container is a general purpose, Python-only Jupyter Lab app
@@ -31,9 +31,9 @@ of course `scipy`. For a full overview of what's included, see the documentation
 for the docker container linked above.
 
 The `datascience-notebook` container has everything in the `scipy-notebook`
-image with the addition of kernels for the R and Julia programming
-languages. For a full overview of what's included, see the documentation for the
-docker container linked above.
+image with the addition of kernels for the R and Julia programming languages.
+For a full overview of what's included, see the documentation for the docker
+container linked above.
 
 In addition, we can configure custom software configurations, and this app is
 one of the ways that we can do that. If you see an image with your course's name
