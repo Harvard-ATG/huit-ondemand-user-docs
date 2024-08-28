@@ -31,7 +31,7 @@ of course `scipy`. For a full overview of what's included, see the documentation
 for the docker container linked above.
 
 The `datascience-notebook` container has everything in the `scipy-notebook`
-image with the addition of additional kernels for the R and Julia programming
+image with the addition of kernels for the R and Julia programming
 languages. For a full overview of what's included, see the documentation for the
 docker container linked above.
 
