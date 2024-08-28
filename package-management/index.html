@@ -335,11 +335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../jupyterlab-spack/" class="md-nav__link">
+      <a href="../jupyterlab-apptainer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    JupyterLab (Spack)
+    Jupyter Lab
   </span>
   
 
@@ -446,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    Overview / Global
+    Global
   </span>
   
 
@@ -793,12 +793,8 @@ environment itself.</p>
 is less simple. It's best to run these installations in a Slurm job, since some
 installations will take a long time to run. Therefore, we recommend adapting
 this bash script for your Spack installation, and using it via <code>sbatch</code>. This is
-the script that we use to manage the global installation. You can adapt it for
-your use by copying the script to a file in your own home directory (we call it
-<code>spackEnvironment.sh</code>, so you might as well use the same name). Once you have
-your own copy of the script in HUIT OOD, you can edit the line marked with <code>#
-CHANGEME</code> to point the script to your own Spack installation, rather than the
-global one.</p>
+the script that we use to manage the global installation, so just change the
+line with the Spack activation to match your installation path.</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span>
 <span class="w">  </span><span class="k">then</span>
@@ -819,14 +815,6 @@ spack<span class="w"> </span>install
 you can run it as a Slurm job with</p>
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>-c<span class="w"> </span><span class="m">4</span><span class="w"> </span>spackEnvironment.sh<span class="w"> </span>environmentName
 </code></pre></div>
-<p>Once you've submitted the job, you can check on the job's progress with slurm
-commands. For instance, you can see the state of your running jobs with the
-command <code>squeue -u $(whoami)</code>. A "state" of "CF" indicates your job is allocated
-to a job that is currently starting (or configuring), and a state of "R"
-indicates that your job is running. This command will also show you the job ID
-of your job, which you can use to view the output of your job. The output file
-will appear in the directory you started the job from as <code>slurm-$JOBID.out</code>,
-where <code>$JOBID</code> is your job ID.</p>
 <p>If you prefer to do this interactively, you can start an interactive Slurm
 session with an <code>salloc</code> command, then using <code>srun spack install</code>. However, this
 could require babysitting your terminal to see if there are any errors with the

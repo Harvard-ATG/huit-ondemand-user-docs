@@ -20,7 +20,7 @@
     
     
       
-        <title>JupyterLab (Spack) - HUIT Open OnDemand User Documentation</title>
+        <title>Jupyter Lab - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyterlab-spack" class="md-skip">
+        <a href="#jupyter-lab" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JupyterLab (Spack)
+              Jupyter Lab
             
           </span>
         </div>
@@ -350,7 +350,7 @@
           
   
   <span class="md-ellipsis">
-    JupyterLab (Spack)
+    Jupyter Lab
   </span>
   
 
@@ -361,7 +361,7 @@
         
   
   <span class="md-ellipsis">
-    JupyterLab (Spack)
+    Jupyter Lab
   </span>
   
 
@@ -383,18 +383,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alternative-spack-installation" class="md-nav__link">
+  <a href="#running-the-app" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative Spack Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alternative-spack-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative Spack Environment
+      Running the app
     </span>
   </a>
   
@@ -504,7 +495,7 @@
         
   
   <span class="md-ellipsis">
-    Overview / Global
+    Global
   </span>
   
 
@@ -631,18 +622,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alternative-spack-installation" class="md-nav__link">
+  <a href="#running-the-app" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative Spack Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alternative-spack-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative Spack Environment
+      Running the app
     </span>
   </a>
   
@@ -663,40 +645,39 @@
                   
 
 
-<h1 id="jupyterlab-spack">JupyterLab (spack)</h1>
-<p>The JupyterLab app that runs via spack has some options in addition to the basic
-CPU and time allocations. These allow you to launch a session with an
-alternative configuration that you define. </p>
-<p>If you just want to use the default packages included in the app, including
-<code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, and <code>scipy</code>, then you don't need to worry about
-these settings. If you want to define your own environment with spack, or you
-have been instructed that an alternative environment has been prepared for your
-class, read on.</p>
-<h2 id="alternative-spack-installation">Alternative Spack Installation</h2>
-<p>The package manager that we use in HUIT Open OnDemand,
-<a href="https://spack.io/">Spack</a>, has a self-contained installation in the file
-system. That means that within your own home directory, or within a course
-shared folder, you can set up a different Spack installation with packages and
-environments that you define, and which can draw on the software already
-installed globally. The JupyterLab (spack) setup allows you to specify an
-alternative Spack path to use, so that the same app configuration can be used
-with these other installations.</p>
-<p>When setting this option, you must already have an alternative Spack
-installation set up, and the installation must include a named environment that
-includes the <code>py-jupyterlab</code> package. You can refer to this installation by its
-absolute path, beginning with <code>/shared</code></p>
-<h2 id="alternative-spack-environment">Alternative Spack Environment</h2>
-<p>The JupyterLab (spack) application also allows you to specify an alternate Spack
-environment. <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_environments.html">Spack
-environments</a>
-define a consistent set of packages in a more durable way than a series of
-<code>spack load</code> commands. You may be instructed to change this environment if one
-has been set up for your course as part of the global Spack installation. If
-you've set up your own Spack installation, you must also define an environment
-within that installation that includes the <code>py-jupyterlab</code> package, as well as
-any other packages containing Python modules that you want to have available.
-For more on managing packages with Spack, see the <a href="../package-management/">package management
-page</a></p>
+<h1 id="jupyter-lab">Jupyter Lab</h1>
+<p>This is an implementation of JupyterLab that runs in a container using software
+called <a href="https://apptainer.org/">Apptainer</a>. Since the app runs in a container,
+Slurm commands are not available from within the Jupyter Lab interface, although
+they will still be available through the default <a href="../terminal/">Open OnDemand terminal
+app</a>.</p>
+<h2 id="running-the-app">Running the app</h2>
+<p>When you start the app, you will see the standard options to set the duration of
+your session and the number of CPUs that you will need, as described on the
+<a href="../interactive-apps/">interactive apps page</a>.</p>
+<p>In addition, you will see a dropdown menu allowing you to select a container.
+There are two different default options (<code>scipy-notebook</code> and
+<code>datascience-notebook</code>), as well as other course-specific images that may have
+been prepared for particular use cases.</p>
+<p>We use two of the <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">Jupyter Docker
+stacks</a>
+created by Project Jupyter. Specifically, we have the
+<a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook">scipy-notebook</a>
+and
+<a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook">datascience-notebook</a>
+containers configured for use.</p>
+<p>The <code>scipy-notebook</code> container is a general purpose, Python-only Jupyter Lab app
+with commonly used Python libraries such as <code>numpy</code>, <code>pandas</code>, <code>matplotlib</code>, and
+of course <code>scipy</code>. For a full overview of what's included, see the documentation
+for the docker container linked above.</p>
+<p>The <code>datascience-notebook</code> container has everything in the <code>scipy-notebook</code>
+image with the addition of kernels for the R and Julia programming languages.
+For a full overview of what's included, see the documentation for the docker
+container linked above.</p>
+<p>In addition, we can configure custom software configurations, and this app is
+one of the ways that we can do that. If you see an image with your course's name
+on it, it's likely for you. Ask your instructor if you aren't sure which
+container to use.</p>
 
 
 
