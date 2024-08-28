@@ -26,6 +26,6 @@ while a new node comes online.
 In addition to these general settings, we also have application-specific
 documentation for the following apps:
 
-- [JupyterLab (Spack)](jupyterlab-spack.md)
+- [JupyterLab](jupyterlab-apptainer.md)
 - [Remote Desktop (ROS / Gazebo / Matlab)](remote-desktop-ros.md)
 - [Code Server](vscode-app.md)

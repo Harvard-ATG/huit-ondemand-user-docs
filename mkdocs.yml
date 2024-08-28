@@ -7,7 +7,7 @@ nav:
   - Terminal App: terminal.md
   - Interactive Apps:
     - Overview: interactive-apps.md
-    - JupyterLab (Spack): jupyterlab-spack.md
+    - Jupyter Lab: jupyterlab-apptainer.md
     - Remote Desktop: remote-desktop-ros.md
     - Code Server: vscode-app.md
   - Software (Spack):
