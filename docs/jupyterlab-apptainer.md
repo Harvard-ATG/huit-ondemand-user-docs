@@ -10,7 +10,7 @@ app](terminal.md).
 
 When you start the app, you will see the standard options to set the duration of
 your session and the number of CPUs that you will need, as described on the
-[interactive apps page](jupyterlab-apptainer.md).
+[interactive apps page](interactive-apps.md).
 
 In addition, you will see a dropdown menu allowing you to select a container.
 There are two different default options (`scipy-notebook` and
