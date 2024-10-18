@@ -20,7 +20,7 @@
     
     
       
-        <title>Global - HUIT Open OnDemand User Documentation</title>
+        <title>Overview / Global - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Global
+              Overview / Global
             
           </span>
         </div>
@@ -455,7 +455,7 @@
           
   
   <span class="md-ellipsis">
-    Global
+    Overview / Global
   </span>
   
 
@@ -466,7 +466,7 @@
         
   
   <span class="md-ellipsis">
-    Global
+    Overview / Global
   </span>
   
 
@@ -518,6 +518,15 @@
   <a href="#use-in-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       Use in scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downstream-installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downstream installations
     </span>
   </a>
   
@@ -684,6 +693,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#downstream-installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downstream installations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -735,6 +753,16 @@ $<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
 <p>The <code>spack load</code> command can tolerate some ambiguity if there's only one variant of a software package available. However, if there are multiple variants of the same package, like different versions or software compiled with different compilers, then the command will prompt you to choose which version you mean. That's not an issue in an interactive session, but you should use caution with <code>spack load</code> commands in scripts or <code>.bashrc</code> files, as changes to the Spack installation can cause those commands to suddenly fail if a new variant of loaded software is installed. The consistency of Spack environments in this circumstance is why they are preferred.</p>
 <h2 id="use-in-scripts">Use in scripts</h2>
 <p>If you are preparing a batch job, be sure to include a line to make the <code>spack</code> command available, and to load the packages that your job needs.</p>
+<h2 id="downstream-installations">Downstream installations</h2>
+<p>Spack is self-contained in a single folder, meaning you can install it yourself
+in your home directory, or in a course shared folder. This allows you to add
+your own software without having to request it from Academic Technology and wait
+for it to be set up. Both of these options are described in more detail in the
+<a href="../spack-course-shared/">course-level documentation</a> and the <a href="../spack-local/">personal spack
+installation documentation</a>. In both cases, you can set the
+global installation as an "upstream" installation, meaning that you don't have
+to waste time and effort installing packages that are already set up globally,
+while still having the power to install your own software.</p>
 
 
 
