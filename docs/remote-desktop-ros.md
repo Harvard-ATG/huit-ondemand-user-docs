@@ -10,7 +10,7 @@ additional options for your connection to the application. You can adjust the
 image quality and the compression level. These settings are visible in the
 screenshot below.
 
-[!Screenshot of Open OnDemand interface showing compression and image quality settings, as well as the button to launch the remote desktop](images/remote_desktop_1.png)
+![Screenshot of Open OnDemand interface showing compression and image quality settings, as well as the button to launch the remote desktop](images/remote_desktop_1.png)
 
 Compression adjusts the amount of image compression that your remote desktop
 connection is put through. Compression requires resources on the CPU hosting the

@@ -11,7 +11,7 @@ nav:
     - Remote Desktop: remote-desktop-ros.md
     - Code Server: vscode-app.md
   - Software (Spack):
-    - Global: spack-shared-software.md
+    - Overview / Global: spack-shared-software.md
     - Course level: spack-course-shared.md
     - Personal install: spack-local.md
     - Package management: package-management.md

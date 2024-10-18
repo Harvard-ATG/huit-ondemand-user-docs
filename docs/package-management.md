@@ -85,8 +85,12 @@ The syntax to start an installation is simple, but where to run the installation
 is less simple. It's best to run these installations in a Slurm job, since some
 installations will take a long time to run. Therefore, we recommend adapting
 this bash script for your Spack installation, and using it via `sbatch`. This is
-the script that we use to manage the global installation, so just change the
-line with the Spack activation to match your installation path.
+the script that we use to manage the global installation. You can adapt it for
+your use by copying the script to a file in your own home directory (we call it
+`spackEnvironment.sh`, so you might as well use the same name). Once you have
+your own copy of the script in HUIT OOD, you can edit the line marked with `#
+CHANGEME` to point the script to your own Spack installation, rather than the
+global one.
 
 ```bash
 #!/bin/bash
@@ -112,6 +116,15 @@ you can run it as a Slurm job with
 ```bash
 sbatch -c 4 spackEnvironment.sh environmentName
 ```
+
+Once you've submitted the job, you can check on the job's progress with slurm
+commands. For instance, you can see the state of your running jobs with the
+command `squeue -u $(whoami)`. A "state" of "CF" indicates your job is allocated
+to a job that is currently starting (or configuring), and a state of "R"
+indicates that your job is running. This command will also show you the job ID
+of your job, which you can use to view the output of your job. The output file
+will appear in the directory you started the job from as `slurm-$JOBID.out`,
+where `$JOBID` is your job ID.
 
 If you prefer to do this interactively, you can start an interactive Slurm
 session with an `salloc` command, then using `srun spack install`. However, this
