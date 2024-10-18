@@ -497,6 +497,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spack-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spack Environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#load-packages-with-spack" class="md-nav__link">
     <span class="md-ellipsis">
       Load packages with spack
@@ -649,6 +658,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spack-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spack Environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#load-packages-with-spack" class="md-nav__link">
     <span class="md-ellipsis">
       Load packages with spack
@@ -689,8 +707,12 @@
 </code></pre></div>
 <p>This will make the <code>spack</code> command available in your terminal session. If you want to use the shared <code>spack</code> command in every session, you can add this line to your <code>~/.bashrc</code> file.</p>
 <p>The Code Server app runs using a Spack package, so the shared <code>spack</code> command is available by default in the terminal inside the VS Code interface.</p>
+<h2 id="spack-environments">Spack Environments</h2>
+<p>Once the <code>spack</code> command is available, you can load software. The preferred way to do that in our setup is with a Spack environment. Spack environments are a way of bundling up different software together into a single, easy to load bundle. Spack environments also provide consistency; a Spack environment will consistently load the same set of software, even if new variants of the software are added to the Spack installation. If you've requested software that is installed via Spack, it's likely that an environment was prepared for you by HUIT Academic Technology staff.</p>
+<p>To load an environment, you can use the <code>spack env activate</code> command, followed by the name of the environment. Spack also provides the <code>spacktivate</code> command, which works the same way. So if you have an environment called "testEnv", you can load it with either <code>spack env activate testEnv</code> or <code>spacktivate testEnv</code>, whichever is easier for you to remember.</p>
 <h2 id="load-packages-with-spack">Load packages with <code>spack</code></h2>
-<p>With the <code>spack</code> command enabled, you can now load packages that have been installed to the shared location. You can list all of the packages available with <code>spack find</code>:</p>
+<p>If you want to load individual packages in an interactive session, you can use the <code>spack load</code> command. This lets you specify packages to load by name, version, and even compiler, if there are different variants on the system.</p>
+<p>You can list all of the packages available with <code>spack find</code>:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>spack<span class="w"> </span>find
 --<span class="w"> </span>linux-amzn2-skylake_avx512<span class="w"> </span>/<span class="w"> </span>gcc@7.3.1<span class="w"> </span>-----------------------
 berkeley-db@18.1.40<span class="w">                 </span>curl@8.4.0<span class="w">      </span>htslib@1.17<span class="w">         </span>libdivsufsort@2.0.1<span class="w">  </span>libtool@2.4.7<span class="w">     </span>nghttp2@1.57.0<span class="w">       </span>r@4.3.0<span class="w">               </span>unzip@6.0
@@ -710,6 +732,7 @@ $<span class="w"> </span>spack<span class="w"> </span>load<span class="w"> </spa
 $<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
 /shared/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
 </code></pre></div>
+<p>The <code>spack load</code> command can tolerate some ambiguity if there's only one variant of a software package available. However, if there are multiple variants of the same package, like different versions or software compiled with different compilers, then the command will prompt you to choose which version you mean. That's not an issue in an interactive session, but you should use caution with <code>spack load</code> commands in scripts or <code>.bashrc</code> files, as changes to the Spack installation can cause those commands to suddenly fail if a new variant of loaded software is installed. The consistency of Spack environments in this circumstance is why they are preferred.</p>
 <h2 id="use-in-scripts">Use in scripts</h2>
 <p>If you are preparing a batch job, be sure to include a line to make the <code>spack</code> command available, and to load the packages that your job needs.</p>
 
