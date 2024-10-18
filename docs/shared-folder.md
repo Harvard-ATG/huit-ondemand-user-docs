@@ -11,7 +11,7 @@ which is
 /shared/courseSharedFolders/${CANVAS_COURSE_ID}outer/${CANVAS_COURSE_ID}
 ```
 
-This uses `${CANVAS_COURSE_ID} as a placeholder for the actual course ID.
+This uses `${CANVAS_COURSE_ID}` as a placeholder for the actual course ID.
 
 The shared folder should contain three utility scripts:
 

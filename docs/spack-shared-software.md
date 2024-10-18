@@ -55,3 +55,15 @@ The `spack load` command can tolerate some ambiguity if there's only one variant
 ## Use in scripts
 
 If you are preparing a batch job, be sure to include a line to make the `spack` command available, and to load the packages that your job needs.
+
+## Downstream installations
+
+Spack is self-contained in a single folder, meaning you can install it yourself
+in your home directory, or in a course shared folder. This allows you to add
+your own software without having to request it from Academic Technology and wait
+for it to be set up. Both of these options are described in more detail in the
+[course-level documentation](spack-course-shared.md) and the [personal spack
+installation documentation](spack-local.md). In both cases, you can set the
+global installation as an "upstream" installation, meaning that you don't have
+to waste time and effort installing packages that are already set up globally,
+while still having the power to install your own software.
