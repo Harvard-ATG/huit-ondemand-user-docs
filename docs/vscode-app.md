@@ -40,10 +40,10 @@ reach out to support via [atg@fas.harvard.edu](mailto:atg@fas.harvard.edu)
 When in the terminal in VS Code, you have access to the same slurm commands that
 are available in the terminal that runs on the login node, accessible from the
 OnDemand dashboard. However, the commands may behave differently, since the VS
-Code interface is running as part of an existing slurm job. For instance, you
-cannot allocate additional CPUs via regular `srun` commands, beyond what the VS
-Code interface is already running. However, `sbatch` commands can dispatch jobs
-with additional resources from this context. If you find other problematic slurm
-behavior from the VS Code interface, especially if you have found a workaround,
-let us know by opening an issue in the repository for this documentation:
+Code interface is running as part of an existing slurm job. For instance, `srun`
+will not automatically create a new job, since it is being run in an existing
+job context. It may also be necessary to use `--export=ALL` when running `srun`
+commands from the VS Code terminal. If you find other problematic slurm behavior
+from the VS Code interface, especially if you have found a workaround, let us
+know by opening an issue in the repository for this documentation:
 [github.com/Harvard-ATG/huit-ondemand-user-docs/issues](https://github.com/Harvard-ATG/huit-ondemand-user-docs/issues)
