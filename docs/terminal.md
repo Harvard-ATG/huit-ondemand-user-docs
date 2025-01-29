@@ -2,7 +2,10 @@
 
 Open OnDemand provides access to a browser-based terminal. This terminal runs on a login node in the compute cluster, rather than a compute node, so the terminal environment should not be used directly for computation.
 
-Instead, the terminal should be used to queue batch or interactive jobs with slurm commands, or to perform simple, non-intensive tasks in your home directory.
+Instead, the terminal should be used to queue batch or interactive jobs with slurm commands like [sbatch](https://slurm.schedmd.com/sbatch.html), or to perform simple, non-intensive tasks in your home directory.
+
+!!! danger
+    Login nodes are shared among many users and therefore should not be used to run computationally intensive tasks (R, python, etc). Those tasks should be submitted to the slurm scheduler which will dispatch them on compute nodes.
 
 To access the terminal app, go to the "Clusters" menu item and click on "academic Shell Access". This should open a new tab with a terminal interface into an Amazon Linux 2 environment.
 
