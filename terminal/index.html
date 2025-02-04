@@ -588,12 +588,18 @@
 
 
 <h1 id="terminal-app">Terminal App</h1>
-<p>Open OnDemand provides access to a browser-based terminal. This terminal runs on a login node in the compute cluster, rather than a compute node, so the terminal environment should not be used directly for computation.</p>
-<p>Instead, the terminal should be used to queue batch or interactive jobs with slurm commands, or to perform simple, non-intensive tasks in your home directory.</p>
+<p>Open OnDemand provides access to a browser-based terminal. This terminal runs on a <em>login node</em> in the compute cluster, rather than a <em>compute node</em>, so the terminal environment should not be used directly for computation.</p>
+<p>The terminal should be used to queue batch or interactive jobs with slurm commands like <a href="https://slurm.schedmd.com/sbatch.html">sbatch</a>, or to perform simple, non-intensive tasks in your home directory.</p>
+<div class="admonition danger">
+<p class="admonition-title">Login nodes are not for computing!</p>
+<p>Login nodes are shared among many users and therefore should not be used to run computationally intensive tasks (R, python, etc). Those tasks should be submitted to the slurm scheduler which will dispatch them on compute nodes.</p>
+</div>
 <p>To access the terminal app, go to the "Clusters" menu item and click on "academic Shell Access". This should open a new tab with a terminal interface into an Amazon Linux 2 environment.</p>
 <p><img alt="Screenshot showing the &quot;Clusters&quot; menu item open and the &quot;academic shell access&quot; option highlighted" src="../images/terminal_1.png" /></p>
 <p>When you connect to the terminal, you should see something similar to the screenshot below. If you are prompted for a password, that indicates that a problem has occurred, so please reach out to support via <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a></p>
 <p><img alt="Screenshot showing an active web-based terminal" src="../images/terminal_2.png" /></p>
+<p>Be aware that compute intensive jobs that run on the login node may be killed by the system automatically. If this happens, you will see output in the terminal that says the program was <em>Killed</em>. You can check the <a href="https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html">exit status</a> to confirm the reason by using the <code>$?</code> variable. A value of 137 indicates the program was killed because it used too much memory. The screenshot below shows an example of a program that was limited to 2GB of memory, but attempted to consume 8GB (note that actual limits on the login node may vary).</p>
+<p><img alt="Screenshot showing a terminal process killed by the system for consuming too much memory on the login node" src="../images/terminal_3.png" /></p>
 
 
 
