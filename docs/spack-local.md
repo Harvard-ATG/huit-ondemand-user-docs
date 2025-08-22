@@ -7,7 +7,7 @@ If you want to use different packages than the shared packages, or if you want t
 Installing Spack just requires cloning its git repository:
 
 ```bash
-git clone --depth=2 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+git clone --depth=2 https://github.com/spack/spack.git ~/spack
 ```
 
 You can change `~/spack` if you want to install to another location.
