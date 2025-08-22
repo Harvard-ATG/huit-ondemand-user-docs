@@ -335,32 +335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../jupyterlab-apptainer/" class="md-nav__link">
+      <a href="../jupyterlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Jupyter Lab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remote-desktop-ros/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Remote Desktop
   </span>
   
 
@@ -718,18 +697,42 @@
 
 
 <h1 id="shared-software-with-spack">Shared Software with Spack</h1>
-<p>Our configuration of OnDemand uses a centrally configured repository of command-line software managed by and available through <a href="https://spack.readthedocs.io/en/latest/index.html">Spack</a>. We provide some pre-installed packages, but if you find that you need some software that is available through Spack, it can be installed to that shared location on request.</p>
+<p>Our configuration of OnDemand uses a centrally configured repository of command-line software managed by and available through <a href="https://spack.readthedocs.io/en/latest/index.html">Spack</a>. We provide some pre-installed packages, but if you find that you need some software that is available through Spack, it can be installed to that shared location on request. If you are an instructor in a course using HUIT OOD, and you have a request for software that was not included in the initial request for your course, please write to <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a>.</p>
 <h2 id="make-the-spack-command-available">Make the <code>spack</code> command available</h2>
 <p>In order to avoid interfering with any other configurations that you may want to set up, Spack is not configured in your terminal by default. Rather, it must be activated with the following command (note the dot at the start, and be sure to include that with the rest):</p>
 <div class="highlight"><pre><span></span><code>.<span class="w"> </span>/shared/spack/share/spack/setup-env.sh
 </code></pre></div>
 <p>This will make the <code>spack</code> command available in your terminal session. If you want to use the shared <code>spack</code> command in every session, you can add this line to your <code>~/.bashrc</code> file.</p>
-<p>The Code Server app runs using a Spack package, so the shared <code>spack</code> command is available by default in the terminal inside the VS Code interface.</p>
+<p>Some apps, such as the Code Server app, run using a Spack environment, so the
+shared <code>spack</code> command is available by default in the terminal inside the VS
+Code interface. The info card that you see as the app launches will have more
+information on how the app interacts with Spack, if relevant to the app.</p>
 <h2 id="spack-environments">Spack Environments</h2>
-<p>Once the <code>spack</code> command is available, you can load software. The preferred way to do that in our setup is with a Spack environment. Spack environments are a way of bundling up different software together into a single, easy to load bundle. Spack environments also provide consistency; a Spack environment will consistently load the same set of software, even if new variants of the software are added to the Spack installation. If you've requested software that is installed via Spack, it's likely that an environment was prepared for you by HUIT Academic Technology staff.</p>
-<p>To load an environment, you can use the <code>spack env activate</code> command, followed by the name of the environment. Spack also provides the <code>spacktivate</code> command, which works the same way. So if you have an environment called "testEnv", you can load it with either <code>spack env activate testEnv</code> or <code>spacktivate testEnv</code>, whichever is easier for you to remember.</p>
+<p>Once the <code>spack</code> command is available, you can load software. The preferred way
+to do that in our setup is with a Spack environment. Spack environments are a
+way of bundling up different software together into a single, easy to load
+bundle. Spack environments also provide consistency; a Spack environment will
+consistently load the same set of software, even if new variants of the software
+are added to the Spack installation. If you've requested software that is
+installed via Spack, it's likely that an environment was prepared for you by
+HUIT Academic Technology staff.</p>
+<p>The Spack environments available can be viewed with the <code>spack env list</code>
+command. Environments are named for use cases or for courses, so if you're not
+sure which environment to use, look for one that matches your course name.</p>
+<p>To load an environment, you can use the <code>spack env activate</code> command, followed
+by the name of the environment. Spack also provides the <code>spacktivate</code> command,
+which works the same way. So if you have an environment called "testEnv", you
+can load it with either <code>spack env activate testEnv</code> or <code>spacktivate testEnv</code>,
+whichever is easier for you to remember.</p>
 <h2 id="load-packages-with-spack">Load packages with <code>spack</code></h2>
-<p>If you want to load individual packages in an interactive session, you can use the <code>spack load</code> command. This lets you specify packages to load by name, version, and even compiler, if there are different variants on the system.</p>
+<p>If you want to load individual packages in an interactive session, you can use
+the <code>spack load</code> command. This lets you specify packages to load by name,
+version, and even compiler, if there are different variants on the system.</p>
+<p>If you have an environment loaded, you won't be able to load packages that are
+not included in that environment. If you want to use other packages than what
+are included in the environment, you must first deactivate it with <code>spack env
+deactivate</code>. Then you can load any package included in your currently active
+Spack installation.</p>
 <p>You can list all of the packages available with <code>spack find</code>:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>spack<span class="w"> </span>find
 --<span class="w"> </span>linux-amzn2-skylake_avx512<span class="w"> </span>/<span class="w"> </span>gcc@7.3.1<span class="w"> </span>-----------------------
@@ -743,16 +746,32 @@ cmake@3.27.7<span class="w">                        </span>gmake@4.4.1<span clas
 code-server@4.12.0<span class="w">                  </span>gzip@1.12<span class="w">       </span>libdeflate@1.18<span class="w">     </span>libsigsegv@2.14<span class="w">      </span>ncurses@6.4<span class="w">       </span>python@3.11.6<span class="w">        </span>texinfo@7.0.3
 <span class="o">==</span>&gt;<span class="w"> </span><span class="m">63</span><span class="w"> </span>installed<span class="w"> </span>packages
 </code></pre></div>
-<p>You can load packages with <code>spack load</code> followed by the name of the package. Once you have the package loaded, you'll be able to use the commands that it enables. As an example:</p>
+<p>You can load packages with <code>spack load</code> followed by the name of the package.
+Once you have the package loaded, you'll be able to use the commands that it
+enables. As an example:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
 /usr/bin/which:<span class="w"> </span>no<span class="w"> </span>likwid-perfctr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>/opt/amazon/openmpi/bin:...<span class="o">)</span>
 $<span class="w"> </span>spack<span class="w"> </span>load<span class="w"> </span>likwid
 $<span class="w"> </span>which<span class="w"> </span>likwid-perfctr
 /shared/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
 </code></pre></div>
-<p>The <code>spack load</code> command can tolerate some ambiguity if there's only one variant of a software package available. However, if there are multiple variants of the same package, like different versions or software compiled with different compilers, then the command will prompt you to choose which version you mean. That's not an issue in an interactive session, but you should use caution with <code>spack load</code> commands in scripts or <code>.bashrc</code> files, as changes to the Spack installation can cause those commands to suddenly fail if a new variant of loaded software is installed. The consistency of Spack environments in this circumstance is why they are preferred.</p>
+<p>The <code>spack load</code> command can tolerate some ambiguity if there's only one variant
+of a software package available. However, if there are multiple variants of the
+same package, like different versions or software compiled with different
+compilers, then the command will prompt you to choose which version you mean.
+That's not an issue in an interactive session, but you should use caution with
+<code>spack load</code> commands in scripts or <code>.bashrc</code> files, as changes to the Spack
+installation can cause those commands to suddenly fail if a new variant of
+loaded software is installed. The consistency of Spack environments in this
+circumstance is why they are preferred.</p>
 <h2 id="use-in-scripts">Use in scripts</h2>
-<p>If you are preparing a batch job, be sure to include a line to make the <code>spack</code> command available, and to load the packages that your job needs.</p>
+<p>If you are preparing a batch job, be sure to include a line to make the <code>spack</code>
+command available, and to load the packages that your job needs.</p>
+<p>Use caution in including <code>spack load</code> commands in your scripts. They could be a
+point of failure if other Spack packages are installed to the Spack installation
+that contains the packages you are loading. That doesn't always mean that using
+<code>spack load</code> in a script is a bad idea, just that it's something to look for if
+your script encounters errors.</p>
 <h2 id="downstream-installations">Downstream installations</h2>
 <p>Spack is self-contained in a single folder, meaning you can install it yourself
 in your home directory, or in a course shared folder. This allows you to add

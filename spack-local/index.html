@@ -335,32 +335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../jupyterlab-apptainer/" class="md-nav__link">
+      <a href="../jupyterlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Jupyter Lab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remote-desktop-ros/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Remote Desktop
   </span>
   
 
@@ -548,6 +527,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#package-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Adding packages
@@ -658,6 +646,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#package-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Adding packages
@@ -685,7 +682,7 @@
 <p>If you want to use different packages than the shared packages, or if you want to test out a package before requesting that it be installed in the shared context, you can also install a different <code>spack</code> to your home directory.</p>
 <h2 id="installing">Installing</h2>
 <p>Installing Spack just requires cloning its git repository:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">100</span><span class="w"> </span>--branch<span class="o">=</span>releases/v0.21<span class="w"> </span>https://github.com/spack/spack.git<span class="w"> </span>~/spack
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">2</span><span class="w"> </span>--branch<span class="o">=</span>releases/v0.21<span class="w"> </span>https://github.com/spack/spack.git<span class="w"> </span>~/spack
 </code></pre></div>
 <p>You can change <code>~/spack</code> if you want to install to another location.</p>
 <p>Once you have Spack cloned, you can find the activation script in <code>&lt;install location&gt;/share/spack/setup-env.sh</code> That means if you installed spack via the command above, you can activate it with</p>
@@ -695,11 +692,40 @@
 <p>You can build all of your own dependencies in your home folder, but it can be more expedient to use the pre-build software in the shared spack installation as a starting point. To enable this, you need to set the shared installation directory as an <a href="https://spack.readthedocs.io/en/latest/chain.html">upstream</a>. The easiest way to do this is to run this command with your local spack environment activated:</p>
 <div class="highlight"><pre><span></span><code>spack<span class="w"> </span>config<span class="w"> </span>add<span class="w"> </span>upstreams:spack-instance-1:install_tree:/shared/spack/opt/spack
 </code></pre></div>
+<h2 id="package-repository">Package repository</h2>
+<p>As of <a href="https://github.com/spack/spack/releases/tag/v1.0.0">Spack v1.0.0</a>,
+package definitions in Spack are separate from the Spack tool itself. This means
+you can configure a location for package definitions separately from the Spack
+tool definition. When you create a local spack install, its default behavior is
+to create a package repository in your home directory under <code>~/.spack</code>.</p>
+<p>Having your own package repository in your home directory allows you to manage
+your own package definitions, allowing you to edit package specifications to
+change how applications are configured, or to experiment with the latest
+versions of software. However, if you don't need or want to do those things, you
+may want to re-use the package directory used in the global Spack install to
+save some time and space. If you want to do that, you can run this command:</p>
+<div class="highlight"><pre><span></span><code>spack<span class="w"> </span>repo<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--destination<span class="w"> </span>/shared/spack-packages<span class="w"> </span><span class="nb">builtin</span>
+</code></pre></div>
+<p>This will set your currently active Spack installation to use the package
+repository configured for the global Spack installation.</p>
 <h2 id="adding-packages">Adding packages</h2>
-<p>With a spack installation in your home directory, you can manage your own package installations. You can look for packages with <code>spack list &lt;packagename&gt;</code>, see your installed packages with <code>spack find</code>, and add new packages with <code>spack install &lt;packagename&gt;</code></p>
-<p>When using <code>spack</code> installed to your home directory, make sure that any scripts that reference local packages activate your spack environment, not the shared environment.</p>
+<p>With a spack installation in your home directory, you can manage your own
+package installations. You can look for packages with <code>spack list
+&lt;packagename&gt;</code>, see your installed packages with <code>spack find</code>, and add new
+packages with <code>spack install &lt;packagename&gt;</code></p>
+<p>When using <code>spack</code> installed to your home directory, make sure that any scripts
+that reference local packages activate your spack environment, not the shared
+environment.</p>
 <p>For more on managing a Spack installation and Spack environments, see our <a href="../package-management/">Spack
 package management docs</a>.</p>
+<h1 id="further-resources">Further Resources</h1>
+<ul>
+<li><a href="https://spack.readthedocs.io/en/latest/">Official Spack Documentation</a></li>
+<li><a href="https://github.com/spack/spack/releases/tag/v1.0.0">Spack v1.0.0 release
+  notes</a> - Spack entered
+  <code>v1.0</code> over the summer of 2025, so some of the most recently implemented
+  features may not yet be reflected in the main documentation.</li>
+</ul>
 
 
 

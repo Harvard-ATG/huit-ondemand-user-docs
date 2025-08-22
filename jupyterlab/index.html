@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../package-management/">
+        <link rel="prev" href="../interactive-apps/">
       
+      
+        <link rel="next" href="../vscode-app/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Troubleshooting - HUIT Open OnDemand User Documentation</title>
+        <title>Jupyter Lab - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#troubleshooting" class="md-skip">
+        <a href="#jupyter-lab" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Troubleshooting
+              Jupyter Lab
             
           </span>
         </div>
@@ -274,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -298,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Interactive Apps
@@ -330,10 +334,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../jupyterlab/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jupyter Lab
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -342,6 +366,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launching-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launching the app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-commands-from-the-jupyter-lab-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm commands from the Jupyter Lab app
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -505,30 +567,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,35 +579,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#undetermined-state-interactive-apps" class="md-nav__link">
-    <span class="md-ellipsis">
-      "Undetermined" State Interactive Apps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -597,9 +610,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#undetermined-state-interactive-apps" class="md-nav__link">
+  <a href="#launching-the-app" class="md-nav__link">
     <span class="md-ellipsis">
-      "Undetermined" State Interactive Apps
+      Launching the app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-commands-from-the-jupyter-lab-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm commands from the Jupyter Lab app
     </span>
   </a>
   
@@ -620,13 +642,48 @@
                   
 
 
-<h1 id="troubleshooting">Troubleshooting</h1>
-<h2 id="undetermined-state-interactive-apps">"Undetermined" State Interactive Apps</h2>
-<p>When launching an interactive app, you may see an information card like this one:</p>
-<p><img alt="Screenshot of an interactive app information card with a yellow warning header that reads &quot;Code Server ( [1) Undetermined&quot;" src="../images/troubleshooting_undetermined_1.png" /></p>
-<p>If this happens, it is usually because of a problem in your <code>.bashrc</code> file. If you use the <a href="../terminal/">dashboard terminal app</a> to connect to a login node, you should see the full error causing the problem. The error message should point to a solution to apply to your <code>.bashrc</code> file, but if you have trouble finding a solution, reach out to <a href="mailto:ithelp@harvard.edu?subject=HUIT Open OnDemand">ithelp@harvard.edu</a> for further assistance.</p>
-<p>With a working <code>.bashrc</code> file, interactive apps should start functioning normally. However, sessions that you started will still be running. You can cancel these sessions by first finding their job ID with the <code>squeue</code> command in the <a href="../terminal/">dashboard terminal</a> to see your running jobs with IDs. Then, run <code>scancel {jobid}</code> (don't include the curly braces) to cancel the running job.</p>
-<p>The "Undetermined" state cards will also persist in your interactive session history. If you wish to clean them up and remove them, take note of the session ID in the card. You can remove the corresponding file in your home directory with a <code>rm ~/ondemand/data/sys/dashboard/batch_connect/db/{session_id}</code> command from the <a href="../terminal/">dashboard terminal</a> or any interactive app with terminal access.</p>
+<h1 id="jupyter-lab">Jupyter Lab</h1>
+<p>For Python (and occasionally for R) programming, we provide a Jupyter Lab
+interface. Jupyter apps are configured for each course using HUIT Open OnDemand,
+so as a student or instructor, you'll see a Jupyter app with your course code
+available in your OnDemand Dashboard.</p>
+<p>You'll see the standard options available to other <a href="../interactive-apps/">interactive
+apps</a>, allowing you to set how much time you need for your
+session and how many CPU cores you need. Some Jupyter apps with special
+configurations won't give you options for numbers of CPU cores.</p>
+<p>Some Jupyter apps are also configured with a toggle between a "Course"
+environment and a "Global" environment. In most cases you will want to choose
+the "Course" environment, with the "Global" environment as a fallback. That's
+because the "Course" environment is managed by course instructors, and will have
+additional software configured by the teaching staff. The "Global" environment
+is a fallback environment managed by HUIT with the initial software
+configuration from the beginning of the term. While it should be stable, it may
+not include all of the same software as the "Course" environment.</p>
+<h2 id="launching-the-app">Launching the app</h2>
+<p>When the Jupyter app is ready for launch, you should be able to get into the
+Jupyter environment by clicking on the blue "Connect to Jupyter" button that
+appears when the app is ready to launch. </p>
+<p><img alt="Screenshot showing a Jupyter Lab app card ready to launch in the Open OnDemand interface, with a button that reads &quot;Connect to Jupyter&quot;" src="../images/jupyter_1.png" /></p>
+<p>If you are presented with a Jupyter
+login screen after clicking this button, that indicates that there is a problem
+with the app configuration, and you should contact
+<a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a> for support.</p>
+<h2 id="slurm-commands-from-the-jupyter-lab-app">Slurm commands from the Jupyter Lab app</h2>
+<p>The Jupyter Lab app can be set up in different ways, so whether Slurm commands
+are available will depend on the implementation used in your course. If slurm
+commands are not available in your Jupyter Lab app, the app description will
+have a note to that effect.</p>
+<p>If Slurm commands are available, they will function slightly differently from
+how they work in the terminal app through the OnDemand dashboard, since the
+Jupyter Lab app runs as a slurm job itself. For instance, <code>srun</code> will not
+automatically create a new job, since it is being run in an existing job
+context. To create a new Slurm job from within an app running in its own Slurm
+job, you will need to first allocate compute resources with <code>salloc</code>, or use
+<code>sbatch</code> instead. It may also be necessary to use <code>--export=ALL</code> when running
+<code>srun</code> commands from the VS Code terminal. If you find other problematic slurm
+behavior from the VS Code interface, especially if you have found a workaround,
+let us know by opening an issue in the repository for this documentation:
+<a href="https://github.com/Harvard-ATG/huit-ondemand-user-docs/issues">github.com/Harvard-ATG/huit-ondemand-user-docs/issues</a></p>
 
 
 

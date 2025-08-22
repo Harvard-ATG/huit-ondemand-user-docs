@@ -335,32 +335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../jupyterlab-apptainer/" class="md-nav__link">
+      <a href="../jupyterlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Jupyter Lab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remote-desktop-ros/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Remote Desktop
   </span>
   
 
@@ -761,7 +740,14 @@ which is useful for a more comprehensive understanding of how these environments
 function. In this documentation, we'll take a more focused approach, dealing
 with common setup and installation tasks for preparing an environment for a
 course.</p>
-<p>You can only set up environments in environments that you can modify. In HUIT
+<div class="admonition warning">
+<p class="admonition-title">Non-global environments only</p>
+<p>You can only set up environments in environments that you can modify. This
+includes Spack installations in the course shared folder (modifiable by
+teaching staff) and Spack installations in your home folder (modifiable by
+you as the creator of the installation)</p>
+</div>
+<p>In HUIT
 Open OnDemand, that means that you can only set up environments in your own
 personal Spack installation in your home folder, or in a shared course folder.
 In both cases, you should have the global spack installation set as an upstream,
@@ -834,7 +820,11 @@ installation. By running the installation as a batch job, output from the
 install process is recorded to an output log file, so you can review what the
 script did at your leisure.</p>
 <h3 id="saving-an-environment-definition">Saving an Environment Definition</h3>
-<p>If you have spent some time creating a Spack environment during the course of a term, you may want to re-use the same environment in future terms. Or, if you leave the university, you may want to save an environment definition to take with you to another institution to use on their infrastructure. Spack supports this with <code>spack.yaml</code> files.</p>
+<p>If you have spent some time creating a Spack environment during the course of a
+term, you may want to re-use the same environment in future terms. Or, if you
+leave the university, you may want to save an environment definition to take
+with you to another institution to use on their infrastructure. Spack supports
+this with <code>spack.yaml</code> files.</p>
 <p>When you create an environment, a file is created at
 <code>$SPACK_ROOT/var/spack/environments/$ENVIRONMENT_NAME/spack.yaml</code>, where
 <code>$SPACK_ROOT</code> is the location of your spack installation, and
