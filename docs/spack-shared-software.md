@@ -1,6 +1,6 @@
 # Shared Software with Spack
 
-Our configuration of OnDemand uses a centrally configured repository of command-line software managed by and available through [Spack](https://spack.readthedocs.io/en/latest/index.html). We provide some pre-installed packages, but if you find that you need some software that is available through Spack, it can be installed to that shared location on request.
+Our configuration of OnDemand uses a centrally configured repository of command-line software managed by and available through [Spack](https://spack.readthedocs.io/en/latest/index.html). We provide some pre-installed packages, but if you find that you need some software that is available through Spack, it can be installed to that shared location on request. If you are an instructor in a course using HUIT OOD, and you have a request for software that was not included in the initial request for your course, please write to [atg@fas.harvard.edu](mailto:atg@fas.harvard.edu).
 
 ## Make the `spack` command available
 
@@ -12,17 +12,43 @@ In order to avoid interfering with any other configurations that you may want to
 
 This will make the `spack` command available in your terminal session. If you want to use the shared `spack` command in every session, you can add this line to your `~/.bashrc` file.
 
-The Code Server app runs using a Spack package, so the shared `spack` command is available by default in the terminal inside the VS Code interface.
+Some apps, such as the Code Server app, run using a Spack environment, so the
+shared `spack` command is available by default in the terminal inside the VS
+Code interface. The info card that you see as the app launches will have more
+information on how the app interacts with Spack, if relevant to the app.
 
 ## Spack Environments
 
-Once the `spack` command is available, you can load software. The preferred way to do that in our setup is with a Spack environment. Spack environments are a way of bundling up different software together into a single, easy to load bundle. Spack environments also provide consistency; a Spack environment will consistently load the same set of software, even if new variants of the software are added to the Spack installation. If you've requested software that is installed via Spack, it's likely that an environment was prepared for you by HUIT Academic Technology staff.
+Once the `spack` command is available, you can load software. The preferred way
+to do that in our setup is with a Spack environment. Spack environments are a
+way of bundling up different software together into a single, easy to load
+bundle. Spack environments also provide consistency; a Spack environment will
+consistently load the same set of software, even if new variants of the software
+are added to the Spack installation. If you've requested software that is
+installed via Spack, it's likely that an environment was prepared for you by
+HUIT Academic Technology staff.
 
-To load an environment, you can use the `spack env activate` command, followed by the name of the environment. Spack also provides the `spacktivate` command, which works the same way. So if you have an environment called "testEnv", you can load it with either `spack env activate testEnv` or `spacktivate testEnv`, whichever is easier for you to remember.
+The Spack environments available can be viewed with the `spack env list`
+command. Environments are named for use cases or for courses, so if you're not
+sure which environment to use, look for one that matches your course name.
+
+To load an environment, you can use the `spack env activate` command, followed
+by the name of the environment. Spack also provides the `spacktivate` command,
+which works the same way. So if you have an environment called "testEnv", you
+can load it with either `spack env activate testEnv` or `spacktivate testEnv`,
+whichever is easier for you to remember.
 
 ## Load packages with `spack`
 
-If you want to load individual packages in an interactive session, you can use the `spack load` command. This lets you specify packages to load by name, version, and even compiler, if there are different variants on the system.
+If you want to load individual packages in an interactive session, you can use
+the `spack load` command. This lets you specify packages to load by name,
+version, and even compiler, if there are different variants on the system.
+
+If you have an environment loaded, you won't be able to load packages that are
+not included in that environment. If you want to use other packages than what
+are included in the environment, you must first deactivate it with `spack env
+deactivate`. Then you can load any package included in your currently active
+Spack installation.
 
 You can list all of the packages available with `spack find`:
 
@@ -40,7 +66,9 @@ code-server@4.12.0                  gzip@1.12       libdeflate@1.18     libsigse
 ==> 63 installed packages
 ```
 
-You can load packages with `spack load` followed by the name of the package. Once you have the package loaded, you'll be able to use the commands that it enables. As an example:
+You can load packages with `spack load` followed by the name of the package.
+Once you have the package loaded, you'll be able to use the commands that it
+enables. As an example:
 
 ```bash
 $ which likwid-perfctr
@@ -50,11 +78,26 @@ $ which likwid-perfctr
 /shared/spack/opt/spack/linux-amzn2-skylake_avx512/gcc-7.3.1/likwid-5.2.2-aayxcqg6nj5zykdozo5z4yubzjevxhhm/bin/likwid-perfctr
 ```
 
-The `spack load` command can tolerate some ambiguity if there's only one variant of a software package available. However, if there are multiple variants of the same package, like different versions or software compiled with different compilers, then the command will prompt you to choose which version you mean. That's not an issue in an interactive session, but you should use caution with `spack load` commands in scripts or `.bashrc` files, as changes to the Spack installation can cause those commands to suddenly fail if a new variant of loaded software is installed. The consistency of Spack environments in this circumstance is why they are preferred.
+The `spack load` command can tolerate some ambiguity if there's only one variant
+of a software package available. However, if there are multiple variants of the
+same package, like different versions or software compiled with different
+compilers, then the command will prompt you to choose which version you mean.
+That's not an issue in an interactive session, but you should use caution with
+`spack load` commands in scripts or `.bashrc` files, as changes to the Spack
+installation can cause those commands to suddenly fail if a new variant of
+loaded software is installed. The consistency of Spack environments in this
+circumstance is why they are preferred.
 
 ## Use in scripts
 
-If you are preparing a batch job, be sure to include a line to make the `spack` command available, and to load the packages that your job needs.
+If you are preparing a batch job, be sure to include a line to make the `spack`
+command available, and to load the packages that your job needs.
+
+Use caution in including `spack load` commands in your scripts. They could be a
+point of failure if other Spack packages are installed to the Spack installation
+that contains the packages you are loading. That doesn't always mean that using
+`spack load` in a script is a bad idea, just that it's something to look for if
+your script encounters errors.
 
 ## Downstream installations
 

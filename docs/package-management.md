@@ -37,7 +37,13 @@ function. In this documentation, we'll take a more focused approach, dealing
 with common setup and installation tasks for preparing an environment for a
 course.
 
-You can only set up environments in environments that you can modify. In HUIT
+!!! warning "Non-global environments only"
+    You can only set up environments in environments that you can modify. This
+    includes Spack installations in the course shared folder (modifiable by
+    teaching staff) and Spack installations in your home folder (modifiable by
+    you as the creator of the installation)
+
+In HUIT
 Open OnDemand, that means that you can only set up environments in your own
 personal Spack installation in your home folder, or in a shared course folder.
 In both cases, you should have the global spack installation set as an upstream,
@@ -135,7 +141,11 @@ script did at your leisure.
 
 ### Saving an Environment Definition
 
-If you have spent some time creating a Spack environment during the course of a term, you may want to re-use the same environment in future terms. Or, if you leave the university, you may want to save an environment definition to take with you to another institution to use on their infrastructure. Spack supports this with `spack.yaml` files.
+If you have spent some time creating a Spack environment during the course of a
+term, you may want to re-use the same environment in future terms. Or, if you
+leave the university, you may want to save an environment definition to take
+with you to another institution to use on their infrastructure. Spack supports
+this with `spack.yaml` files.
 
 When you create an environment, a file is created at
 `$SPACK_ROOT/var/spack/environments/$ENVIRONMENT_NAME/spack.yaml`, where

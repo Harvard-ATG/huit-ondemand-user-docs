@@ -24,8 +24,8 @@ compute node with available capacity, rather than having to wait several minutes
 while a new node comes online.
 
 In addition to these general settings, we also have application-specific
-documentation for the following apps:
+documentation. You will only have access to the applications requested for your
+course, so you may not see all of the apps listed below.
 
-- [JupyterLab](jupyterlab-apptainer.md)
-- [Remote Desktop (ROS / Gazebo / Matlab)](remote-desktop-ros.md)
+- [JupyterLab](jupyterlab.md)
 - [Code Server](vscode-app.md)
