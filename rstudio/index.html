@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../spack-shared-software/">
+        <link rel="prev" href="../vscode-app/">
       
       
-        <link rel="next" href="../spack-local/">
+        <link rel="next" href="../spack-shared-software/">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Course level - HUIT Open OnDemand User Documentation</title>
+        <title>RStudio - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spack-in-shared-course-folder" class="md-skip">
+        <a href="#rstudio" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Course level
+              RStudio
             
           </span>
         </div>
@@ -276,17 +276,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -300,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Interactive Apps
@@ -374,10 +376,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../rstudio/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RStudio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -386,6 +408,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#managing-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Packages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -402,19 +453,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -428,7 +477,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Software (Spack)
@@ -460,19 +509,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../spack-course-shared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +521,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -576,6 +615,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#managing-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Packages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -589,38 +645,53 @@
                   
 
 
-<h1 id="spack-in-shared-course-folder">Spack in shared course folder</h1>
-<p>HUIT Open OnDemand comes with Spack already installed, and we try to make sure
-that all of the software that instructors request is available from that global
-Spack installation. However, there may be cases where teaching staff want
-flexibility during the semester to install Spack packages on their own, while
-still sharing those installations with students. For this, it's possible to set
-up a Spack installation in the course shared folder provisioned by default for
-each course.</p>
-<p>Each shared course folder comes with a script, <code>setup_spack.sh</code>, which sets up a
-new Spack installation in the shared course folder and connects it to the global
-installation as an upstream source. This new Spack installation can be managed
-by course staff, without having to reinstall packages that are already installed
-globally.</p>
-<p>The way to activate the global installation is by sourcing a script from that
-global installation, like so:</p>
-<div class="highlight"><pre><span></span><code>.<span class="w"> </span>/shared/spack/share/spack/setup-env.sh
-</code></pre></div>
-<p>For a spack installation in a shared course folder, anyone with access can
-activate it by following the link in their home directory. For a class with
-course ID 000000, that would look like this:</p>
-<div class="highlight"><pre><span></span><code>.<span class="w"> </span>~/000000/spack/share/spack/setup-env.sh
-</code></pre></div>
-<p>You should test the command to make sure it works first, but you can add a line
-like that one to your <code>~/.bashrc</code> file so that the Spack installation in your
-shared course folder is activated whenever you log in. Just be sure that it
-works, because problems with your <code>~/.bashrc</code> file can also cause problems with
-other interactive apps.</p>
-<p>Anyone on the teaching staff should have permission to modify the spack
-installation, including by installing new packages and creating new
-environments.</p>
-<p>For more on managing a Spack installation and Spack environments, see our <a href="../package-management/">Spack
-package management docs</a>.</p>
+<h1 id="rstudio">RStudio</h1>
+<p>We can provide an R environment with RStudio for courses that require it. If
+this has been set up for your course, you will see an app with a name like
+"RStudio - Course Code" in your list of interactive apps in your Open OnDemand
+dashboard.</p>
+<p>When launching an RStudio session, you can set a number of CPU cores available
+to the session, as well as the duration of the session. Using a smaller number
+of CPUs can help your session start faster, since it will be easier to fit it
+into running nodes. Session durations cannot be extended, so if you're going to
+be working for a while, it may be better to set a long session duration, and
+cancel the session from your "My Interactive Sessions" page if you finish early.</p>
+<p><strong>Using R in batch compute:</strong> If you have occasional needs to run R code in
+batch compute sessions, using slurm commands like <code>sbatch</code>, you can use the
+underlying apptainer container for the RStudio app to provide a directly
+analogous environment. If you're going to be using R batch compute regularly, or
+if you have questions about using R in batch compute, reach out to 
+<a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a></p>
+<h2 id="managing-packages">Managing Packages</h2>
+<p>You should be able to install packages for yourself as normal with an
+<code>install.packages()</code> command in your R terminal. The default behavior for R is
+to install these packages in a folder in your home directory, which R may need
+to create for you.</p>
+<p>However, instructors may wish to install packages for students in a course, so
+each student doesn't need to install required packages themself. To facilitate
+this, we set up an R package install location in the course shared folder for
+courses using RStudio. The default installation location for new packages is
+still in a user's home directory, so instructors who want to install packages
+for their students should do the following:</p>
+<ol>
+<li>Find the shared package install location with <code>.libPaths()</code>. Your output will
+   be different, but look for a location containing "<code>courseSharedFolders</code>". Note
+   the number to the left of that location.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/shared/home/uuu000/R/x86_64-pc-linux-gnu-library/4.5&quot;</span><span class="w">                           </span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/usr/local/lib/R/site-library&quot;</span><span class="w">                                                   </span>
+<span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/usr/local/lib/R/library&quot;</span><span class="w">                                                        </span>
+<span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/shared/courseSharedFolders/000000outer/000000/R/x86_64-pc-linux-gnu-library/4.5&quot;</span>
+</code></pre></div></li>
+<li>Install package(s) to the shared location. You can use the <code>.libPaths()</code>
+   function and the index number you noted to install to the shared location
+   without going to the trouble of copying and pasting it. In the example above,
+   one could install <code>ggplot2</code> to the shared location like so:
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;ggplot2&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="nf">.libPaths</span><span class="p">()[</span><span class="m">4</span><span class="p">])</span>
+</code></pre></div></li>
+</ol>
+<p>If you encounter problems with this process, please reach out to us at
+<a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a>.</p>
 
 
 
