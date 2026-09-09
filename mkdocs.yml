@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - File Management: file-management.md
   - Shared Folder: shared-folder.md
+  - Scratch Storage: scratch-storage.md
   - Terminal App: terminal.md
   - Interactive Apps:
     - Overview: interactive-apps.md

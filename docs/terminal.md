@@ -22,6 +22,8 @@ problem has occurred, so please reach out to support via
 
 ![Screenshot showing an active web-based terminal](images/terminal_2.png)
 
+For fast, temporary storage during a compute job, see the [Scratch Storage](scratch-storage.md) page. Before you run your first job, your scratch directory does not exist yet.
+
 Be aware that compute intensive jobs that run on the login node may be killed by the system automatically. If this happens, you will see output in the terminal that says the program was _Killed_. You can check the [exit status](https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html) to confirm the reason by using the `$?` variable. A value of 137 indicates the program was killed because it used too much memory. The screenshot below shows an example of a program that was limited to 2GB of memory, but attempted to consume 8GB (note that actual limits on the login node may vary).
 
 ![Screenshot showing a terminal process killed by the system for consuming too much memory on the login node](images/terminal_3.png)
