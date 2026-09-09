@@ -9,6 +9,7 @@ nav:
     - Overview: interactive-apps.md
     - Jupyter Lab: jupyterlab.md
     - Code Server: vscode-app.md
+    - RStudio: rstudio.md
   - Software (Spack):
     - Overview / Global: spack-shared-software.md
     - Course level: spack-course-shared.md
