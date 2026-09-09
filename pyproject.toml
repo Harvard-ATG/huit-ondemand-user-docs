@@ -1,0 +1,9 @@
+[project]
+name = "huit-ondemand-user-docs"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "mkdocs==1.6.0",
+    "mkdocs-material==9.7.7",
+]

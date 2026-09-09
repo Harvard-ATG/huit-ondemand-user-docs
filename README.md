@@ -4,11 +4,21 @@ This repository contains the source files for the HUIT OnDemand user documentati
 
 ## Development environment
 
-This repo uses `mkdocs`, and the version last used is pinned to `requirements.txt`. Any environment with a compatible version of `mkdocs` should work fine for a local development environment.
+This repo uses `mkdocs`, managed with [uv](https://docs.astral.sh/uv/). Dependencies and their pinned versions are in `pyproject.toml` and `uv.lock`.
+
+To set up your environment:
+```
+uv sync
+```
+
+To preview the site locally:
+```
+uv run mkdocs serve
+```
 
 ## Deployment
 
 To update the GitHub Pages site attached to this repository, use the following command:
 ```
-mkdocs gh-deploy
+uv run mkdocs gh-deploy
 ```
