@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../interactive-apps/">
+        <link rel="prev" href="../shared-folder/">
       
       
-        <link rel="next" href="../vscode-app/">
+        <link rel="next" href="../terminal/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Jupyter Lab - HUIT Open OnDemand User Documentation</title>
+        <title>Scratch Storage - HUIT Open OnDemand User Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyter-lab" class="md-skip">
+        <a href="#scratch-storage" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jupyter Lab
+              Scratch Storage
             
           </span>
         </div>
@@ -282,10 +282,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../scratch-storage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scratch Storage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -301,6 +328,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-your-scratch-directory-gets-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How your scratch directory gets created
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-terminal-app-before-running-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Terminal app before running a job
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -336,20 +405,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -370,7 +437,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -413,37 +480,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Lab
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../jupyterlab/" class="md-nav__link">
         
   
   
@@ -459,48 +499,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#launching-the-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching the app
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-commands-from-the-jupyter-lab-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slurm commands from the Jupyter Lab app
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -789,10 +787,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#launching-the-app" class="md-nav__link">
+  <a href="#how-your-scratch-directory-gets-created" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Launching the app
+        How your scratch directory gets created
       
     </span>
   </a>
@@ -800,10 +798,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slurm-commands-from-the-jupyter-lab-app" class="md-nav__link">
+  <a href="#using-the-terminal-app-before-running-a-job" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slurm commands from the Jupyter Lab app
+        Using the Terminal app before running a job
       
     </span>
   </a>
@@ -827,48 +825,39 @@
 
 
 
-<h1 id="jupyter-lab">Jupyter Lab</h1>
-<p>For Python (and occasionally for R) programming, we provide a Jupyter Lab
-interface. Jupyter apps are configured for each course using HUIT Open OnDemand,
-so as a student or instructor, you'll see a Jupyter app with your course code
-available in your OnDemand Dashboard.</p>
-<p>You'll see the standard options available to other <a href="../interactive-apps/">interactive
-apps</a>, allowing you to set how much time you need for your
-session and how many CPU cores you need. Some Jupyter apps with special
-configurations won't give you options for numbers of CPU cores.</p>
-<p>Some Jupyter apps are also configured with a toggle between a "Course"
-environment and a "Global" environment. In most cases you will want to choose
-the "Course" environment, with the "Global" environment as a fallback. That's
-because the "Course" environment is managed by course instructors, and will have
-additional software configured by the teaching staff. The "Global" environment
-is a fallback environment managed by HUIT with the initial software
-configuration from the beginning of the term. While it should be stable, it may
-not include all of the same software as the "Course" environment.</p>
-<h2 id="launching-the-app">Launching the app</h2>
-<p>When the Jupyter app is ready for launch, you should be able to get into the
-Jupyter environment by clicking on the blue "Connect to Jupyter" button that
-appears when the app is ready to launch. </p>
-<p><img alt="Screenshot showing a Jupyter Lab app card ready to launch in the Open OnDemand interface, with a button that reads &quot;Connect to Jupyter&quot;" src="../images/jupyter_1.png" /></p>
-<p>If you are presented with a Jupyter
-login screen after clicking this button, that indicates that there is a problem
-with the app configuration, and you should contact
-<a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a> for support.</p>
-<h2 id="slurm-commands-from-the-jupyter-lab-app">Slurm commands from the Jupyter Lab app</h2>
-<p>The Jupyter Lab app can be set up in different ways, so whether Slurm commands
-are available will depend on the implementation used in your course. If slurm
-commands are not available in your Jupyter Lab app, the app description will
-have a note to that effect.</p>
-<p>If Slurm commands are available, they will function slightly differently from
-how they work in the terminal app through the OnDemand dashboard, since the
-Jupyter Lab app runs as a slurm job itself. For instance, <code>srun</code> will not
-automatically create a new job, since it is being run in an existing job
-context. To create a new Slurm job from within an app running in its own Slurm
-job, you will need to first allocate compute resources with <code>salloc</code>, or use
-<code>sbatch</code> instead. It may also be necessary to use <code>--export=ALL</code> when running
-<code>srun</code> commands from the VS Code terminal. If you find other problematic slurm
-behavior from the VS Code interface, especially if you have found a workaround,
-let us know by opening an issue in the repository for this documentation:
-<a href="https://github.com/Harvard-ATG/huit-ondemand-user-docs/issues">github.com/Harvard-ATG/huit-ondemand-user-docs/issues</a></p>
+<h1 id="scratch-storage">Scratch Storage</h1>
+<p>HUIT Open OnDemand gives every user a private scratch directory at
+<code>/scratch/$USER</code>, where <code>$USER</code> is your username. Use scratch storage for
+fast, temporary storage during a compute job. Typical uses include
+intermediate files and large datasets that your job reads and writes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Scratch storage is ephemeral</p>
+<p>Scratch storage does not keep multiple copies of your data. A file in
+<code>/scratch/$USER</code> can disappear at any time, even outside of any job. Do
+not use scratch storage for long-term storage. Save any results that you
+want to keep in your home directory instead.</p>
+</div>
+<p>To find your username, run this command in a terminal on the cluster:</p>
+<div class="highlight"><pre><span></span><code>echo $USER
+</code></pre></div>
+<p>If this command returns nothing, run <code>id -nu</code> instead.</p>
+<h2 id="how-your-scratch-directory-gets-created">How your scratch directory gets created</h2>
+<p>The system creates <code>/scratch/$USER</code> automatically the first time you run a
+job, whether through an interactive app, <code>sbatch</code>, or <code>srun</code>. Your scratch
+directory is private: only you can read or write it.</p>
+<h2 id="using-the-terminal-app-before-running-a-job">Using the Terminal app before running a job</h2>
+<p>The <a href="../terminal/">Terminal app</a> connects you to a login node, not a compute
+node. If you open the Terminal app before you run any job, <code>/scratch/$USER</code>
+does not exist yet.</p>
+<p>To create your scratch directory now, run this command:</p>
+<div class="highlight"><pre><span></span><code>srun --pty true
+</code></pre></div>
+<p>This command runs a simple job on a compute node. The job creates
+<code>/scratch/$USER</code>. Scratch storage exists on both login and compute nodes, so
+your scratch directory then also appears in the Terminal app.</p>
+<p>Even after <code>/scratch/$USER</code> appears in the Terminal app, do not run compute
+intensive work there. <a href="../terminal/#terminal-app">Login nodes are not for
+computing</a>. Submit a job instead.</p>
 
 
 
