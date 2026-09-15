@@ -62,6 +62,15 @@ capacity is available. Unfortunately we're not able to estimate when AWS
 capacity will become available, so we're not able to provide any estimates of
 when a better time would be to launch an interactive app.
 
+If you've started an app like Jupyter Lab or Code Server, and you're seeing that
+the queue is down, you may just walk away and try again later. If you have a
+session queued that you don't intend to wait for, it helps everyone if you
+cancel that session. Otherwise, the session will run whenever the resources are
+available, whether you are there or not. You'll find the "Cancel" button in the
+top right corner of an app launch card, as pictured below:
+
+![Screenshot showing a large red arrow pointing to a "Cancel" button on an app launch card for a GPU-based interactive app](images/cancel-session.png)
+
 If you're not sure if this applies to your situation, or if you have further
 questions, please reach out to
 [ithelp@harvard.edu](mailto:ithelp@harvard.edu?subject=HUIT Open OnDemand) for
