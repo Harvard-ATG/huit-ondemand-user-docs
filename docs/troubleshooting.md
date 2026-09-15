@@ -1,6 +1,17 @@
 # Troubleshooting
 
-## Most / All Nodes "Down" in a Queue
+## App / Job Stuck in "Queued" State; Most / All Nodes "Down" in a Queue
+
+When running a batch job via `sbatch` or starting an interactive app like
+Jupyter Lab or Code Server, it's normal for your job to stay "queued" for 5-10
+minutes as compute resources come online for your job to run on. However,
+sometimes your job can stay queued longer than that. If you've used other HPC
+clusters, your instinct might be to check the cluster status with an `sinfo`
+command from the [terminal app](terminal.md). If you do that, you may see that
+most or even all of the nodes in the queue that you're trying to run your job on
+report their state as "down".
+
+### Why Can This Happen?
 
 HUIT Open OnDemand runs in Amazon Web Services (AWS), and all of the compute
 nodes are Amazon Elastic Compute Cloud (EC2) instances that are allocated for
