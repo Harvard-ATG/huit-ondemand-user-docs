@@ -11,7 +11,34 @@ command from the [terminal app](terminal.md). If you do that, you may see that
 most or even all of the nodes in the queue that you're trying to run your job on
 report their state as "down".
 
-### Why Can This Happen?
+### What does this problem look like?
+
+Starting interactive apps can normally take 5-10 minutes to queue, as resources
+are prepared for the session. However, you may still see your app (Jupyter Lab,
+Code Server, RStudio, etc.) in a "Queued" state for longer than 10 minutes. If
+you're seeing this screen for more than 10 minutes, then you should check to see
+if there's an issue with the queue using the [terminal app](terminal.md).
+
+![Screenshot showing an Open OnDemand app card in the "Queued" state](images/vscode_3.png)
+
+In an open [terminal](terminal.md), you can use the `sinfo` command to view the
+state of the compute queues. Here is an example of output that indicates
+capacity issues in the `gpu` queue:
+
+```
+ARTITION          AVAIL  TIMELIMIT  NODES  STATE NODELIST
+general*              up 3-00:00:00      1   mix# general-dy-general-cr-1
+general*              up 3-00:00:00      1  alloc general-dy-general-cr-2
+general*              up 3-00:00:00     73  idle~ general-dy-general-cr-[3-75]
+gpu                   up 2-00:00:00    299  down~ gpu-dy-gpu-cr-[2-300]
+gpu                   up 2-00:00:00      1  down# gpu-dy-gpu-cr-1
+```
+
+The `mix`, `idle`, and `alloc` states for the `general` queue indicate normal
+functioning in that queue. The `down` status for the GPU queue indicates that
+there is a problem with the queue.
+
+### Why can this happen?
 
 HUIT Open OnDemand runs in Amazon Web Services (AWS), and all of the compute
 nodes are Amazon Elastic Compute Cloud (EC2) instances that are allocated for
@@ -81,6 +108,12 @@ available, whether you are there or not. You'll find the "Cancel" button in the
 top right corner of an app launch card, as pictured below:
 
 ![Screenshot showing a large red arrow pointing to a "Cancel" button on an app launch card for a GPU-based interactive app](images/cancel-session.png)
+
+These issues affect everyone using a particular queue. If you are a student
+encountiering this issue, reach out to your instructor to let them know about
+the issue. If you are the instructor encountering this issue, or hearing about
+it from your students, you can contact HUIT Academic Technology for support via
+[ithelp@harvard.edu](mailto:ithelp@harvard.edu?subject=HUIT Open OnDemand).
 
 If you're not sure if this applies to your situation, or if you have further
 questions, please reach out to
