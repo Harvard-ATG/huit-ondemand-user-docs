@@ -729,6 +729,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#app-job-stuck-in-queued-state-most-all-nodes-down-in-a-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App / Job Stuck in "Queued" State; Most / All Nodes "Down" in a Queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="App / Job Stuck in &#34;Queued&#34; State; Most / All Nodes &#34;Down&#34; in a Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-this-problem-look-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does this problem look like?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-can-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why can this happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#undetermined-state-interactive-apps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -774,6 +824,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#app-job-stuck-in-queued-state-most-all-nodes-down-in-a-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App / Job Stuck in "Queued" State; Most / All Nodes "Down" in a Queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="App / Job Stuck in &#34;Queued&#34; State; Most / All Nodes &#34;Down&#34; in a Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-does-this-problem-look-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does this problem look like?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-can-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why can this happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to do
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#undetermined-state-interactive-apps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -802,6 +902,104 @@
 
 
 <h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="app-job-stuck-in-queued-state-most-all-nodes-down-in-a-queue">App / Job Stuck in "Queued" State; Most / All Nodes "Down" in a Queue</h2>
+<p>When running a batch job via <code>sbatch</code> or starting an interactive app like
+Jupyter Lab or Code Server, it's normal for your job to stay "queued" for 5-10
+minutes as compute resources come online for your job to run on. However,
+sometimes your job can stay queued longer than that. If you've used other HPC
+clusters, your instinct might be to check the cluster status with an <code>sinfo</code>
+command from the <a href="../terminal/">terminal app</a>. If you do that, you may see that
+most or even all of the nodes in the queue that you're trying to run your job on
+report their state as "down".</p>
+<h3 id="what-does-this-problem-look-like">What does this problem look like?</h3>
+<p>Starting interactive apps can normally take 5-10 minutes to queue, as resources
+are prepared for the session. However, you may still see your app (Jupyter Lab,
+Code Server, RStudio, etc.) in a "Queued" state for longer than 10 minutes. If
+you're seeing this screen for more than 10 minutes, then you should check to see
+if there's an issue with the queue using the <a href="../terminal/">terminal app</a>.</p>
+<p><img alt="Screenshot showing an Open OnDemand app card in the &quot;Queued&quot; state" src="../images/vscode_3.png" /></p>
+<p>In an open <a href="../terminal/">terminal</a>, you can use the <code>sinfo</code> command to view the
+state of the compute queues. Here is an example of output that indicates
+capacity issues in the <code>gpu</code> queue:</p>
+<div class="highlight"><pre><span></span><code>ARTITION          AVAIL  TIMELIMIT  NODES  STATE NODELIST
+general*              up 3-00:00:00      1   mix# general-dy-general-cr-1
+general*              up 3-00:00:00      1  alloc general-dy-general-cr-2
+general*              up 3-00:00:00     73  idle~ general-dy-general-cr-[3-75]
+gpu                   up 2-00:00:00    299  down~ gpu-dy-gpu-cr-[2-300]
+gpu                   up 2-00:00:00      1  down# gpu-dy-gpu-cr-1
+</code></pre></div>
+<p>The <code>mix</code>, <code>idle</code>, and <code>alloc</code> states for the <code>general</code> queue indicate normal
+functioning in that queue. The <code>down</code> status for the GPU queue indicates that
+there is a problem with the queue.</p>
+<h3 id="why-can-this-happen">Why can this happen?</h3>
+<p>HUIT Open OnDemand runs in Amazon Web Services (AWS), and all of the compute
+nodes are Amazon Elastic Compute Cloud (EC2) instances that are allocated for
+use in response to jobs running on the cluster.</p>
+<p>That means that unlike in a traditional HPC cluster that runs out of a specific
+data center, the compute nodes don't represent specific hardware devices.
+Rather, they represent the allocation of compute resources within AWS.</p>
+<p>As a result, it's possible for a compute node to be unable to launch because
+Amazon does not have compute resources available in the region that we operate
+from. This is particularly true for GPU instances, which are in high demand
+worldwide and only available to courses with concrete needs for those resources.
+When this happens, compute nodes that were marked as "idle" in the cluster are
+instead marked as "down". Behind the scenes, the system will periodically try to
+launch EC2 instances as compute nodes so that the queued work can proceed. </p>
+<p>This is an important distinction. In a traditional HPC data center, a node
+marked as "down" likely has a hardware or software failure that prevents it from
+being used. In this system, a node marked as "down" most often means that Amazon
+currently lacks the capacity to launch that instance type, and the system will
+keep trying to launch it until it succeeds. It could still indicate a problem
+with an individual node, but if you're seeing "down" for the majority of a
+queue, AWS capacity is the more likely culprit than catastrophic hardware
+failure.</p>
+<p>Unfortunately, we don't have insight into how much capacity AWS has in different
+instance series at different times. This cluster is using the same
+infrastructure that is shared by all other AWS customers, making it difficult to
+anticipate capacity in advance. Guaranteeing availability requires advance
+planning (Amazon recommends 8 weeks) and paying for unused compute resources,
+which is why courses use Amazon's on-demand instance capacity.</p>
+<p>Several defensive measures are already in place to make this as unlikely and
+short-lived a state as possible:</p>
+<ul>
+<li>All queues draw from multiple AWS availability zones, so compute resources can
+  come from a number of different Amazon data centers in the same region.</li>
+<li>Where possible, queues are configured with multiple instance types. Some
+  courses have requirements that can only be met by certain instance types, but
+  we do this wherever we can.</li>
+<li>The system (AWS Parallel Cluster) retries the compute resource request
+  periodically so you don't have to resubmit jobs.</li>
+</ul>
+<h3 id="what-to-do">What to do</h3>
+<p>If you are submitting a batch job, then checking <code>sinfo</code> and seeing this state,
+just know that your job will take longer to start, but it will run eventually,
+either when AWS has more capacity, or when work completes on the nodes that are
+currently running in the queue that you requested. If there is an alternative
+queue where your work can run that has capacity, and your work will run on that
+queue, you may want to try that instead.</p>
+<p>If you are running an interactive job, such as an app through the Open OnDemand
+dashboard, and you're seeing this as a cluster status after checking <code>sinfo</code> in
+a terminal, you may be better served by converting the work that you need to do
+into a batch job and running it unattended, so that it can run and complete when
+capacity is available. Unfortunately we're not able to estimate when AWS
+capacity will become available, so we're not able to provide any estimates of
+when a better time would be to launch an interactive app.</p>
+<p>If you've started an app like Jupyter Lab or Code Server, and you're seeing that
+the queue is down, you may just walk away and try again later. If you have a
+session queued that you don't intend to wait for, it helps everyone if you
+cancel that session. Otherwise, the session will run whenever the resources are
+available, whether you are there or not. You'll find the "Cancel" button in the
+top right corner of an app launch card, as pictured below:</p>
+<p><img alt="Screenshot showing a large red arrow pointing to a &quot;Cancel&quot; button on an app launch card for a GPU-based interactive app" src="../images/cancel-session.png" /></p>
+<p>These issues affect everyone using a particular queue. If you are a student
+encountiering this issue, reach out to your instructor to let them know about
+the issue. If you are the instructor encountering this issue, or hearing about
+it from your students, you can contact HUIT Academic Technology for support via
+<a href="mailto:ithelp@harvard.edu?subject=HUIT Open OnDemand">ithelp@harvard.edu</a>.</p>
+<p>If you're not sure if this applies to your situation, or if you have further
+questions, please reach out to
+<a href="mailto:ithelp@harvard.edu?subject=HUIT Open OnDemand">ithelp@harvard.edu</a> for
+further assistance.</p>
 <h2 id="undetermined-state-interactive-apps">"Undetermined" State Interactive Apps</h2>
 <p>When launching an interactive app, you may see an information card like this one:</p>
 <p><img alt="Screenshot of an interactive app information card with a yellow warning header that reads &quot;Code Server ( [1) Undetermined&quot;" src="../images/troubleshooting_undetermined_1.png" /></p>
