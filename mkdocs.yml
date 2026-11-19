@@ -2,6 +2,7 @@ site_name: HUIT Open OnDemand User Documentation
 
 nav:
   - Home: index.md
+  - Data Security: data-security.md
   - File Management: file-management.md
   - Shared Folder: shared-folder.md
   - Scratch Storage: scratch-storage.md

@@ -13,6 +13,12 @@ We need a new request for each semester that you intend to use the platform for,
 so that we can ensure that the platform is still needed, and that we're
 providing the software and compute resources required for your course.
 
+## Data Security
+
+HUIT Open OnDemand is approved for storing and processing data up to and including Level 3. Level 4 and Level 5 data are not permitted on this platform. Learn more about [Harvard’s data risk classifications](https://privsec.harvard.edu/classify-risk) to determine the appropriate level for your course data. See the
+[Data Security](data-security.md) page for a summary of the levels and examples
+of data that is not allowed.
+
 ## Interactive Software
 
 In OnDemand, users have access to a file management app to access files in their
